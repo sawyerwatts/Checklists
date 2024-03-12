@@ -14,4 +14,6 @@ location (old logs can be removed as desired).
 - Ensure non-deterministic operations (file calls, network calls, retrieving
 the current date/time) are either pushed to the boundary of the system or are
 placed behind an abstract type.
+- Ensure developers have the means to change the code with confidence (this
+will probably require automated tests).
 
