@@ -1,7 +1,7 @@
 # Language
 
-TODO: specify that this is for non-trivial solutions, glue scripts have
-lesser concerns
+These checklists are mildly to severely opinionated, and this checklist is
+particularly opinionated since dynamic languages are just for glue scripts.
 
 ## Language Features
 
