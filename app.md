@@ -7,6 +7,8 @@ system is performant enough to achieve that throughput.
 - Have a strategy in place to allow devs to easily 1) establish correctness and
 2) ensure correctness is preserved after making changes.
     - Automated testing is usually the answer here.
+    - Integration tests are the best since they tend to cover more interactions
+    and really test the extended behavior
 - What is the error handling strategy
     - Ensure errors are caught (at least as a near root-level try/catch).
         - Ideally, as few subjects will fall out when an exception occurs.
@@ -23,5 +25,15 @@ location (old logs can be removed as desired).
 the current date/time) are either pushed to the boundary of the system or are
 placed behind a swappable abstraction.
 - Where the app will be deployed, how it will be deployed (ideally a pipeline),
-and how will it be ran?
+and how will it be ran (and under what account, and what perms will that
+account need)?
+- What are the inputs, outputs, and mutations of the app?
+    - Is the operation idempotent? Can the operation be reran? Is there a point
+    of no return?
+- What are the upstream dependencies? What depends on this?
+- Consider SLAs
+    - What alerting is in place when an SLA is at risk or breached?
+    - Is there a max duration?
+    - Is there a start-by time or a start-at time?
+    - Is there an end-by time or an end-at time?
 

@@ -29,12 +29,13 @@ errors
     - Ideally, an asyncronous logger
 - Prebuilt answers to as many other checklist items as possible, particularly
 for the app types targeting
+- How's the ecosystem?
 
 ## Tooling
 
 - Build tool
 - Package manager
 - Code formatter
-- LSP
+- LSP and IDE
 - Templating engine
 
