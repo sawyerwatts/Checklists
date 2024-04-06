@@ -5,6 +5,7 @@
     - How to build the code?
     - How to test the code?
     - How to deploy the code?
+    - Where to find the extended docs?
 - If possible, determine an estimated load and acceptable latency. Ensure the
 system is performant enough to achieve that throughput.
     - Ideally, criteria for load and stress testing can be identified as well.
@@ -30,7 +31,7 @@ the current date/time) are either pushed to the boundary of the system or are
 placed behind a swappable abstraction.
 - Where the app will be deployed, how it will be deployed (ideally a pipeline),
 and how will it be ran (and under what account, and what perms will that
-account need)?
+account need (and does that account only have perms to what it needs))?
 - What are the inputs, outputs, and mutations of the app?
     - Is the operation idempotent? Can the operation be reran? Is there a point
     of no return?
