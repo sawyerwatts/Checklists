@@ -1,11 +1,15 @@
 # App
 
-- What is the purpose, abstract, or problem statement of this application?
+- Does the `README.md` detail:
+    - The purpose, abstract, or problem statement of this application?
+    - How to build the code?
+    - How to test the code?
+    - How to deploy the code?
 - If possible, determine an estimated load and acceptable latency. Ensure the
 system is performant enough to achieve that throughput.
     - Ideally, criteria for load and stress testing can be identified as well.
 - Have a strategy in place to allow devs to easily 1) establish correctness and
-2) ensure correctness is preserved after making changes.
+  2) ensure correctness is preserved after making changes.
     - Automated testing is usually the answer here.
     - Integration tests are the best since they tend to cover more interactions
     and really test the extended behavior
@@ -30,10 +34,12 @@ account need)?
 - What are the inputs, outputs, and mutations of the app?
     - Is the operation idempotent? Can the operation be reran? Is there a point
     of no return?
-- What are the upstream dependencies? What depends on this?
+- Dependency analysis: what are the upstream dependencies? What depends on
+  this?
 - Consider SLAs
     - What alerting is in place when an SLA is at risk or breached?
     - Is there a max duration?
     - Is there a start-by time or a start-at time?
     - Is there an end-by time or an end-at time?
+- What is the bus factor of this app?
 
