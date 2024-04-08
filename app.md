@@ -43,4 +43,5 @@ account need (and does that account only have perms to what it needs))?
     - Is there a start-by time or a start-at time?
     - Is there an end-by time or an end-at time?
 - What is the bus factor of this app?
+- Does the app support ctl-c interrupts?
 

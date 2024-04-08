@@ -34,8 +34,10 @@ for the app types targeting
 ## Tooling
 
 - Build tool
-- Package manager
-- Code formatter
 - LSP and IDE
+    - Project-wide diagnostics
+    - Decompiler especially
+    - Formatter
+- Package manager
 - Templating engine
 
