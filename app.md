@@ -2,6 +2,8 @@
 
 - Does the `README.md` detail:
     - The purpose, abstract, or problem statement of this application?
+        - What are the critical characteristics?
+        - What is this application *not*?
     - How to build the code?
     - How to test the code?
     - How to deploy the code?
@@ -25,6 +27,7 @@ system is performant enough to achieve that throughput.
     - Deliniate between developer- and business-bound errors.
 - Ensure a logging library is used and logs are written to a persistent
 location (old logs can be removed as desired).
+    - Async logging is preferred
 - Ensure network calls utilize resiliency.
 - Ensure non-deterministic operations (file calls, network calls, retrieving
 the current date/time) are either pushed to the boundary of the system or are
@@ -37,11 +40,13 @@ account need (and does that account only have perms to what it needs))?
     of no return?
 - Dependency analysis: what are the upstream dependencies? What depends on
   this?
+- What are the side effects of this app?
 - Consider SLAs
     - What alerting is in place when an SLA is at risk or breached?
     - Is there a max duration?
     - Is there a start-by time or a start-at time?
     - Is there an end-by time or an end-at time?
 - What is the bus factor of this app?
-- Does the app support ctl-c interrupts?
+- Does the app support ctl-c interrupts? Is a crash-only mentality relevant or
+  necessary here?
 
