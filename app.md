@@ -25,6 +25,10 @@ system is performant enough to achieve that throughput.
         - A log file on its own is not enough. That said, it could feed a
         monitoring/alerting solution.
     - Deliniate between developer- and business-bound errors.
+    - Be mindful of error sources, particularly other web APIs
+- Ensure a monitoring and alerting strategy is defined
+    - Of note, monitor number of failures/errors, and the volume of successful
+      requests/outputs/sideEffects
 - Ensure a logging library is used and logs are written to a persistent
 location (old logs can be removed as desired).
     - Async logging is preferred

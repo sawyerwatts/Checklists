@@ -14,4 +14,6 @@
   shutdown before escaping? (Done channels and waitgroups are helpful here.)
 - Does the sending Goroutine need to close the channel? AKA does the receiving
   Goroutine need to be told no more values will be sent?
+- Does every `select` block `case <-ctx.Done(): return` (or some other
+  cancellation channel)?
 
