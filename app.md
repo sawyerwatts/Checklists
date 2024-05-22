@@ -7,7 +7,10 @@
     - How to build the code?
     - How to test the code?
     - How to deploy the code?
-    - Where to find the extended docs?
+    - Consider the bus factor!
+        - Requirements, specs, diagrams, etc
+        - Are there C4 diagrams (or any other diagrams)?
+        - Where to find the extended docs? Are they here?
 - If possible, determine an estimated load and acceptable latency. Ensure the
 system is performant enough to achieve that throughput.
     - Ideally, criteria for load and stress testing can be identified as well.
@@ -53,4 +56,6 @@ account need (and does that account only have perms to what it needs))?
 - What is the bus factor of this app?
 - Does the app support ctl-c interrupts? Is a crash-only mentality relevant or
   necessary here?
+- How are dev credentials stored?
+- What type of app is this? What is that app type's checklist?
 
