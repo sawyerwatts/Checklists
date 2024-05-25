@@ -4,7 +4,7 @@
 is fully auto-generating the OpenAPI spec for the web app, including
 documentation.
 - Pagination!
-
+- How is this endpoint secured?
 
 ## Request Pipeline
 
