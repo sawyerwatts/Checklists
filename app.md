@@ -55,8 +55,8 @@ no return?
     - Is there a max duration?
     - Is there a start-by time or a start-at time?
     - Is there an end-by time or an end-at time?
-- Does the app support ctl-c interrupts? Is a crash-only mentality relevant or
-necessary here?
+- Does the app support ctl-c interrupts and cancellation? Is a crash-only
+mentality relevant or necessary here?
 - How are dev credentials stored?
 - What type of app is this? What is that app type's checklist?
 

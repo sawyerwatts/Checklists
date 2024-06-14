@@ -8,6 +8,7 @@
     - What is the patching policy?
 - What is the cadence for performing a full restore in a fresh environment?
 - What is the cadence for reviewing the documentation?
+- Periodically review substantial decisions and preconditions
 
 ## Monitoring/Alering
 

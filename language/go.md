@@ -8,6 +8,7 @@
     Goroutine need to be told that no more values will be sent?
 - Does the receiving Goroutine early escape and put the sender at risk of
   hanging/leaking? (`context.WithCancel` and cancel funcs are helpful here)
+  - Using a buffered channel can help here
 - Does the receiving Goroutine need to wait until the sending Goroutine has
   shutdown before escaping? (Done channels and waitgroups are helpful here)
 - Does every `select` block `case <-ctx.Done(): return` (or some other

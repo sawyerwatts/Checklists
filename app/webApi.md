@@ -1,5 +1,7 @@
 # Web APIs
 
+TODO: 404 not found changed to something else?
+
 Shoutout to [StickFigure](https://github.com/stickfigure) for their amazing
 article on REST API design
 ([here](https://github.com/stickfigure/blog/wiki/How-to-%28and-how-not-to%29-design-REST-APIs)).
@@ -13,6 +15,7 @@ web app, including documentation.
 - How is this endpoint secured?
 - Is `Content-Type` being checked? (`415: Unsupported media type`)
 - Is `Accept` being checked and respected? (`406: Not acceptable`)
+- Is the API versioned?
 
 ## Request Pipeline (Middleware)
 
@@ -40,7 +43,7 @@ aren't there, then implementing them in the request pipeline would be a good
 errors is not leaked)
 - Idempotent POSTs (`X-Idempotency-Token`)
     - `409: Conflict` is generally good when a completed POST is resubmitted
-- Request timeouts
+- Request timeouts (comprehensive, read, write, idle)
 - Rate limiting: `429: Too many requests`
 - Backpressure limiting: `503: Service unavailable` (altho `429` could work too)
 - Request size limiting
