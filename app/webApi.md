@@ -1,7 +1,5 @@
 # Web APIs
 
-TODO: 404 not found changed to something else?
-
 Shoutout to [StickFigure](https://github.com/stickfigure) for their amazing
 article on REST API design
 ([here](https://github.com/stickfigure/blog/wiki/How-to-%28and-how-not-to%29-design-REST-APIs)).
@@ -16,6 +14,8 @@ web app, including documentation.
 - Is `Content-Type` being checked? (`415: Unsupported media type`)
 - Is `Accept` being checked and respected? (`406: Not acceptable`)
 - Is the API versioned?
+- A `404: Not Found` is technically correct, but meaningfully can be ambiguous.
+Using `410: Gone` can be clearer.
 
 ## Request Pipeline (Middleware)
 
@@ -38,15 +38,16 @@ aren't there, then implementing them in the request pipeline would be a good
         blank or none or whatever that one is)
         - Use the issuer signing key to validate the JWT's signature
         - Is sent with HTTPS metadata
-- Panic protection (catch exceptions and return 500, ideally scrubbed of info)
-- Obfuscate payload of 500s (so stack traces and possibly sensitive data in
-errors is not leaked)
-- Idempotent POSTs (`X-Idempotency-Token`)
+- Is panic protection in place and do they returnn 500?
+- Are the payload of 500s obfuscated (since stack traces and possibly sensitive
+data in errors is not leaked)?
+- Are POSTs made idempotent (`X-Idempotency-Token`)?
     - `409: Conflict` is generally good when a completed POST is resubmitted
-- Request timeouts (comprehensive, read, write, idle)
-- Rate limiting: `429: Too many requests`
-- Backpressure limiting: `503: Service unavailable` (altho `429` could work too)
-- Request size limiting
+- Are request timeouts implemented (comprehensive, read, write, idle)?
+- Is rate limiting impleneted and does it return `429: Too many requests`?
+- Is backpressure limiting implemented and does it return `503: Service
+unavailable` (altho `429` could work too)?
+- Is request size limiting implemented?
     - This would be much preferred to be handled by the API gateway, and NGINX
     and IIS servers both cap request sizes at 30 MB
 
