@@ -59,4 +59,6 @@ no return?
 mentality relevant or necessary here?
 - How are dev credentials stored?
 - What type of app is this? What is that app type's checklist?
+- MVP! Incremental development! Get the most important somethings built first
+and into users hands! How will the work be partitioned and parallelized?
 

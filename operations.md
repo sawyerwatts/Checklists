@@ -1,5 +1,7 @@
 # Operations
 
+- What are the governance policies, if any?
+
 ## Recurring Tasks
 
 - What is the cadence for updating packages?
