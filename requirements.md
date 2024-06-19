@@ -10,4 +10,6 @@ Credit to
 etc.
 - How should the software work? CLI tool, web service, etc
 - What is critical and what is nice to have?
+- MVP! Incremental development! Get the most important somethings built first
+and into users hands! How will the work be partitioned and parallelized?
 
