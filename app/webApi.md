@@ -39,8 +39,13 @@ aren't there, then implementing them in the request pipeline would be a good
         - Use the issuer signing key to validate the JWT's signature
         - Is sent with HTTPS metadata
 - Is panic protection in place and do they returnn 500?
-- Are the payload of 500s obfuscated (since stack traces and possibly sensitive
-data in errors is not leaked)?
+    - You don't want to leak stack frames or other incidental data when sending
+      a 500, so having panic protection middleware not write the panic is more
+    secure
+    - However, if you have the http server automatically obfuscate 500s, then
+    you won't have to worry about an app forgetting to obfuscate its panics, but
+    then you also won't be able to send errors in 500s. This will require either
+    sending errors on another status code or not sending errors at all.
 - Are POSTs made idempotent (`X-Idempotency-Token`)?
     - `409: Conflict` is generally good when a completed POST is resubmitted
 - Are request timeouts implemented (comprehensive, read, write, idle)?

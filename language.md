@@ -41,3 +41,10 @@ for the app types targeting
 - Package manager
 - Templating engine
 
+### Relational DBs
+
+- How does the language support getting multiple `select` results from a single
+  sproc/func/etc call?
+- How does the language send table-value parameters or composite arrays to a
+target relational DB sproc?
+
