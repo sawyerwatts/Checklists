@@ -9,13 +9,15 @@ This has a ton of great ideas, many of which are referenced here.
 ensure the language/framework is fully auto-generating the OpenAPI spec for the
 web app, including documentation.
 - Is there a health check endpoint?
-- Pagination!
+- Pagination! Beware of how much load (such as requested objects) you are
+allowing clients to inflict on your app.
 - How is this endpoint secured?
 - Is `Content-Type` being checked? (`415: Unsupported media type`)
 - Is `Accept` being checked and respected? (`406: Not acceptable`)
 - Is the API versioned?
 - A `404: Not Found` is technically correct, but meaningfully can be ambiguous.
 Using `410: Gone` can be clearer.
+- Does it make sense for any endpoints to support async or be async-only?
 
 ## Request Pipeline (Middleware)
 

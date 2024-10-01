@@ -1,6 +1,9 @@
 # Operations
 
 - What are the governance policies, if any?
+- Is FinOps desired and applied?
+- Are there any reports that we'd want written?
+- Are there backups? 3-2-1?
 
 ## Recurring Tasks
 
@@ -22,4 +25,5 @@
     - CPU usage
     - RAM usage
 - Cloud services: cost usage
+- Are you tracking and dashboarding/alerting for response times, run times, etc?
 

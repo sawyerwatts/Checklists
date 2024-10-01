@@ -41,10 +41,13 @@ for the app types targeting
 - Package manager
 - Templating engine
 
-### Relational DBs
+### Relational DBs and ORMs
 
+- How can the ORM's SQL be displayed?
+    - How frequently does the ORM fall into the N+1 Problem?
+- How do the ORMs handle materializing multiple types, esp left joins?
 - How does the language support getting multiple `select` results from a single
   sproc/func/etc call?
 - How does the language send table-value parameters or composite arrays to a
-target relational DB sproc?
+target relational DB sproc? Does it work for lists of primatives and structs?
 

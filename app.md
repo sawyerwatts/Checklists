@@ -49,4 +49,5 @@ need (and does that account only have perms to what it needs))?
 mentality relevant or necessary here? Are there any points of no return?
 - How are developer credentials stored?
 - What type of app is this? What is that app type's checklist?
+- Does the app make any events that we'd want to publish?
 
