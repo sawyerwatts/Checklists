@@ -5,7 +5,8 @@ necessary. Similarly, check if the result has a `Close()` method or similar.
 
 ## Goroutines and Channels
 
-- When will this channel be happily closed?
+- When will this channel be happily closed? Are you at risk of trying to receive
+  from or send to a closed channel?
   - Ex: "the lines channel will happily close after every line is scanned and
   sent/received through the channel"
 - Since channels are a syncronization tool, can the receiver(s) early escape and
