@@ -18,6 +18,9 @@ allowing clients to inflict on your app.
 - A `404: Not Found` is technically correct, but meaningfully can be ambiguous.
 Using `410: Gone` can be clearer.
 - Does it make sense for any endpoints to support async or be async-only?
+- Does the API make relevant use of the `ETag` and `Cache-Control` headers? How
+about `If-Match`, `If-None-Match`, and `If-Modified-Since` headers?
+    - [Understanding Cache-Control and ETag for efficient web caching](https://dev.to/andreasbergstrom/understanding-cache-control-and-etag-for-efficient-web-caching-2nf5)
 
 ## Request Pipeline (Middleware)
 
