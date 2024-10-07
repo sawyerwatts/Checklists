@@ -45,6 +45,12 @@ implementation detail?
 - Is the module's API small and clear?
 - Dependency analysis: what does this module depend on and what modules depend
 on this module?
+- When in doubt, organize code by feature (and not by execution flow or
+flowcharts).
+- If a module could be sliced several ways (such as horizontal vs vertical
+architectures), try to slice based off the design decision that will change more
+frequently (so slice vertically as business logic will change much more
+frequently than DB providers and data stores).
 
 ## Specifics
 
