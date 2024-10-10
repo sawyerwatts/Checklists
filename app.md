@@ -28,7 +28,7 @@ no return?
     - Ideally, criteria for load and stress testing can be identified as well.
 - What are the SLAs?
     - What alerting is in place when an SLA is at risk or breached?
-    - Is there a max duration?
+    - Is there a max duration / response time thresholds?
     - Is there a start-by time or a start-at time?
     - Is there an end-by time or an end-at time?
 - Termination
@@ -40,7 +40,9 @@ no return?
 
 - How well does each module isolate and abstract a design decision or
 implementation detail?
-- How's the locality of behavior?
+- How's the locality of behavior? (This isn't true  modularity but it's still
+helpful to consider, esp when locality of behavior is flouted for true
+modularity).
 - Is it clear why something should or should not be added to a module?
 - Is the module's API small and clear?
 - Dependency analysis: what does this module depend on and what modules depend
