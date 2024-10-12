@@ -20,6 +20,7 @@
 - Apps should consider monitoring/alerting as well
 - How many/rate failures/errors is too many over what period?
 - How many/rate successful requests/outputs/sideEffects?
+- Is there monitoring of the various scalability and SLA requirements?
 - VM/Container
     - Disk space
     - CPU usage
