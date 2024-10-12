@@ -86,4 +86,6 @@ need (and does that account only have perms to what it needs))?
         monitoring/alerting solution.
     - Likely want to deliniate between developer- and business-bound errors.
     - Be mindful of error sources, particularly other web APIs
+- Could any of the input vectors be able to execute a DOS attack, even
+accidentally? If so, how would that be done?
 
