@@ -88,4 +88,5 @@ need (and does that account only have perms to what it needs))?
     - Be mindful of error sources, particularly other web APIs
 - Could any of the input vectors be able to execute a DOS attack, even
 accidentally? If so, how would that be done?
+- How optimized are the hot paths?
 
