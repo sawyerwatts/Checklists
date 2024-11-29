@@ -12,8 +12,9 @@ web app, including documentation.
 - Pagination! Beware of how much load (such as requested objects) you are
 allowing clients to inflict on your app.
 - How is this endpoint secured?
-- Is `Content-Type` being checked? (`415: Unsupported media type`)
-- Is `Accept` being checked and respected? (`406: Not acceptable`)
+- How's the content negotiation?
+    - Is `Content-Type` being checked? (`415: Unsupported media type`)
+    - Is `Accept` being checked and respected? (`406: Not acceptable`)
 - Is the API versioned?
 - A `404: Not Found` is technically correct, but meaningfully can be ambiguous.
 Using `410: Gone` can be clearer.
@@ -27,9 +28,17 @@ about `If-Match`, `If-None-Match`, and `If-Modified-Since` headers?
 Some of these would generally be best implemented in the API gateway, but they
 aren't there, then implementing them in the request pipeline would be a good
 
-- At ends of request pipeline, def want to log things like
-    - Host URL
-    - Request verb and URL
+- Ensure these are logged
+    - Request received timestamp
+    - Request verb
+    - Request host name
+    - Request path
+    - Request client IP
+    - Request client identity (if using auth)
+    - Response sent timestamp
+    - Response latency
+    - Response status code
+    - If 500, content body
 - Trace UUID is nice, esp when added to logging scope very early
 - Authentication and authorization (API key, JWT, etc)
     - Prob want to add user ID to logging scope
@@ -43,7 +52,7 @@ aren't there, then implementing them in the request pipeline would be a good
         blank or none or whatever that one is)
         - Use the issuer signing key to validate the JWT's signature
         - Is sent with HTTPS metadata
-- Is panic protection in place and do they returnn 500?
+- Is panic protection in place and do they return 500?
     - You don't want to leak stack frames or other incidental data when sending
       a 500, so having panic protection middleware not write the panic is more
     secure
