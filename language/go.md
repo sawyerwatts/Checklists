@@ -2,6 +2,8 @@
 
 - If unsure, check a factory's docs to see if there are clean up steps
 necessary. Similarly, check if the result has a `Close()` method.
+- If passing a struct to a func, it is assumed that it will not be updated
+unless the docs say otherwise. Ensure this is the case.
 
 ## Goroutines and Channels
 
