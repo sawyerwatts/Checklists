@@ -1,7 +1,7 @@
 # Go
 
 - If unsure, check a factory's docs to see if there are clean up steps
-necessary. Similarly, check if the result has a `Close()` method or similar.
+necessary. Similarly, check if the result has a `Close()` method.
 
 ## Goroutines and Channels
 
@@ -25,4 +25,31 @@ Goroutines shut down before escaping?
 - Channels will cascade completion/cancellation to downstream Goroutines via
 closing; to cascade upstream, use `errgroup.WithContext` and register downstream
 groups first
+
+## HTTP Servers
+
+You'll want to set time limits for max read/write/idle times, and max header
+bytes. Otherwise, you can be DOSed.
+
+```go
+s := http.Server{
+	Addr:           "localhost:8080",
+	Handler:        router,
+	ReadTimeout:    30 * time.Second,
+	WriteTimeout:   90 * time.Second,
+	IdleTimeout:    120 * time.Second,
+	MaxHeaderBytes: 1 << 20,
+}
+```
+
+## Interrupt Support
+
+```go
+quit := make(chan os.Signal, 1)
+signal.Notify(quit, syscall.SIGTERM, syscall.SIGINT)
+<-quit
+ctx, cancel := context.WithTimeout(ctx, 5 * time.Second)
+defer cancel()
+// Now shut stuff down w/ new ctx
+```
 

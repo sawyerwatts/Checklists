@@ -5,9 +5,8 @@ article on REST API design
 ([here](https://github.com/stickfigure/blog/wiki/How-to-%28and-how-not-to%29-design-REST-APIs)).
 This has a ton of great ideas, many of which are referenced here.
 
-- When writing RESTful APIs, assuming a statically typed language is used,
-ensure the language/framework is fully auto-generating the OpenAPI spec for the
-web app, including documentation.
+- Ensure an OpenAPI spec is accessible (if not a Swagger webpage), at least in
+lower environments
 - Is there a health check endpoint?
 - Pagination! Beware of how much load (such as requested objects) you are
 allowing clients to inflict on your app.
