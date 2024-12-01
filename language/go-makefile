@@ -75,6 +75,7 @@ audit: source-.env test
 .PHONY: stub-.env
 stub-.env:
 	@echo -e "#!/bin/bash \n\
+	set -u \n\
 	# This script contains credentials and secrets, so it is present in the .gitignore \n\
 	export APP_PFX_MY_PASSWD=TODO:this \n\
 	" > .env
