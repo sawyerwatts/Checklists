@@ -41,9 +41,10 @@ frequently than DB providers and data stores).
 
 ## Security
 
-- Obvious stuff, like SQL and command injection.
 - Could any of the input vectors be able to execute a DOS attack, even
 accidentally? If so, how would that be done?
+- Obvious stuff, like SQL and command injection
+- There's a lot here so good luck
 
 ## Scalability and SLAs
 
