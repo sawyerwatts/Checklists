@@ -7,6 +7,7 @@ This has a ton of great ideas, many of which are referenced here.
 
 - Ensure an OpenAPI spec is accessible (if not a Swagger webpage), at least in
 lower environments
+    - An example `http` file isn't a terrible idea too
 - Is there a health check endpoint?
 - Pagination! Beware of how much load (such as requested objects) you are
 allowing clients to inflict on your app.
@@ -27,6 +28,7 @@ about `If-Match`, `If-None-Match`, and `If-Modified-Since` headers?
 Some of these would generally be best implemented in the API gateway, but they
 aren't there, then implementing them in the request pipeline would be a good
 
+- Ensure web framework uses same logger as the rest of the app
 - Ensure these are logged
     - Request received timestamp
     - Request verb
