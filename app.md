@@ -4,8 +4,7 @@
 
 - Is this operation idempotent? If not, what is the point of no return? Can
 it be made idempotent like via idempotency token HTTP headers?
-- Could any of the input vectors be able to execute a DOS attack, even
-accidentally? If so, how would that be done?
+- Under what situations could the code run out of memory?
 - Are there any events that this code may want to push?
 
 ## Error Handling
@@ -39,6 +38,12 @@ flowcharts).
 architectures), try to slice based off the design decision that will change more
 frequently (so slice vertically as business logic will change much more
 frequently than DB providers and data stores).
+
+## Security
+
+- Obvious stuff, like SQL and command injection.
+- Could any of the input vectors be able to execute a DOS attack, even
+accidentally? If so, how would that be done?
 
 ## Scalability and SLAs
 
