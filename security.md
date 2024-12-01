@@ -64,6 +64,8 @@ languages).
 
 Systems may need to be written such that they can handle spikes in volume, even
 real volume, such as utilizing queues to defer DB mutations like CQRS.
+Additionally, consider how client/user inputs can determine the amount of used
+memory and cycles.
 
 ### Elevation of Privilege
 

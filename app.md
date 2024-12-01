@@ -6,6 +6,7 @@
 it be made idempotent like via idempotency token HTTP headers?
 - Under what situations could the code run out of memory?
 - Are there any events that this code may want to push?
+- See [./security.md][./security.md]
 
 ## Error Handling
 
@@ -38,13 +39,6 @@ flowcharts).
 architectures), try to slice based off the design decision that will change more
 frequently (so slice vertically as business logic will change much more
 frequently than DB providers and data stores).
-
-## Security
-
-- Could any of the input vectors be able to execute a DOS attack, even
-accidentally? If so, how would that be done?
-- Obvious stuff, like SQL and command injection
-- There's a lot here so good luck
 
 ## Scalability and SLAs
 
