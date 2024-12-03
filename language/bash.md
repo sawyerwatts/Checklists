@@ -1,5 +1,24 @@
 # Bash
 
+## `getopts`
+
+```sh
+while getopts 'lha:' OPTION; do
+  case "$OPTION" in
+    l) echo "linuxconfig" ;;
+    h) echo "you have supplied the -h option" ;;
+    a)
+      avalue="$OPTARG"
+      echo "The value provided is $OPTARG"
+      ;;
+    ?)
+      echo "script usage: $(basename $0) [-l] [-h] [-a somevalue]" >&2
+      exit 1
+      ;;
+  esac
+done
+```
+
 ## Unofficial Strict Mode
 
 [Source](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
