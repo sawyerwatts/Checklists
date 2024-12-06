@@ -19,9 +19,9 @@ Within a list, these steps don't need to be in complete isolation (like logging
 can be done whenever earlier), but the goal is to ensure that an iteration is
 always performed.
 
-### Lower-Level
+### Operation-Level
 
-Here is a list of drafts to implementing a new functionality into a system.
+Here is a list of drafts to implementing a new operation into a system.
 
 1. Identify the granularity of the lower-level coding, like function, service,
 module/package, web API, etc
@@ -49,7 +49,7 @@ code? (Automated tests are usually the answer here).
 ### App-Level
 
 Here is a list of drafts to implementing the top level of an application. These
-are much less strictly ordered than the Lower-Level drafts (even if that is
+are much less strictly ordered than the operation-Level drafts (even if that is
 mildly not super important to perform in order).
 
 1. Identify the app type(s) (console, daemon, CLI, web API, etc)
