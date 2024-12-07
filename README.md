@@ -27,8 +27,7 @@ Here is a list of drafts to implementing a new operation into a system.
 module/package, web API, etc
 1. Create the cursory design
 1. Prototype the happy path
-1. Implement error handling
-1. Implement assertions
+1. Implement error handling and add assertions
 1. Implement resilience, cancellation, and the necessary amount of durability
 for the use case
 1. Ensure resources are closed and check for other language-specific gotchas
@@ -41,6 +40,7 @@ details, like that a web API implements content negotionation, that the code
 is modularity, etc
     - See [./app.md](./app.md) for more specific checks
     - See the relevant subpage in [./app/](./app/) based off granularity
+1. Try to ensure the operation can live for a decade without becoming too legacy.
 1. Ensure inlined docs and wiki are written
 1. How do devs easily establish correctness of the code and regression test the
 code? (Automated tests are usually the answer here).
@@ -65,6 +65,8 @@ loaded, like from file, env var, flags, etc
 1. See relevant other pages
     - See [./app.md](./app.md) for more specific checks
     - See the relevant subpage in [./app/](./app/) based off granularity
+1. Implement error handling and add assertions
+1. Try to ensure the app can live for a decade without becoming too legacy.
 1. Ensure `README.md` is complete:
     - Document the purpose, abstract, or problem statement of this app
         - Document the critical characteristics
