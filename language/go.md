@@ -57,6 +57,9 @@ defer cancel()
 
 ## Setting a defined timezone for the application
 
+If it is desirable to explicitly control the timezone of all the `time.Time`s,
+this can be done with the following code or via an environment variable.
+
 ```go
 loc, err := time.LoadLocation("GMT")
 if err != nil {

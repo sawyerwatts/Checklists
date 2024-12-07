@@ -5,6 +5,8 @@ article on REST API design
 ([here](https://github.com/stickfigure/blog/wiki/How-to-%28and-how-not-to%29-design-REST-APIs)).
 This has a ton of great ideas, many of which are referenced here.
 
+TODO: Refactor this list too
+
 - Ensure an OpenAPI spec is accessible (if not a Swagger webpage), at least in
 lower environments
     - An example `http` file isn't a terrible idea too
