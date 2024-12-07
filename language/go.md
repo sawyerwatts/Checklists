@@ -55,3 +55,13 @@ defer cancel()
 // Now shut stuff down w/ new ctx
 ```
 
+## Setting a defined timezone for the application
+
+```go
+loc, err := time.LoadLocation("GMT")
+if err != nil {
+	panic(fmt.Sprintf("Couldn't set timezone to '%s'", "GMT"))
+}
+time.Local = loc
+```
+
