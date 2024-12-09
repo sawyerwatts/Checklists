@@ -7,6 +7,8 @@ it be made idempotent like via idempotency token HTTP headers?
 - Under what situations could the code run out of memory?
 - Are there any events that this code may want to push?
 - See [./security.md][./security.md]
+- As an exercise, what would the minimum required code changes be (if you didn't
+care about code quality, modularity, ownership, etc)?
 
 ## Error Handling
 

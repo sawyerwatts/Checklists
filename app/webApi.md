@@ -24,6 +24,7 @@ Using `410: Gone` can be clearer.
 - Does the API make relevant use of the `ETag` and `Cache-Control` headers? How
 about `If-Match`, `If-None-Match`, and `If-Modified-Since` headers?
     - [Understanding Cache-Control and ETag for efficient web caching](https://dev.to/andreasbergstrom/understanding-cache-control-and-etag-for-efficient-web-caching-2nf5)
+- Use strings for IDs, never ints
 
 ## Request Pipeline (Middleware)
 
