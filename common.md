@@ -31,10 +31,10 @@ helpful to consider, esp when locality of behavior is flouted for true
 modularity).
 - Is it clear why something should or should not be added to a module?
 - Is the module's API small and clear?
-- Dependency analysis: what does this module depend on and what modules depend
-on this module? Are modules loosely coupled via interfaces or via indirect usage
-(such as having the caller take the result from module A and pass it to module
-B)?
+- Dependency analysis: what does this module depend on (or use) and what modules
+depend (or use) on this module? Are modules loosely coupled via interfaces or
+via indirect usage (such as having the caller take the result from module A and
+pass it to module B)?
 - When in doubt, organize code by feature (and not by execution flow or
 flowcharts).
 - If a module could be sliced several ways (such as horizontal vs vertical
