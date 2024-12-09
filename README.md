@@ -58,7 +58,7 @@ mildly not super important to perform in order).
     - Ensure logs are written to a persistent location
     - Ensure logs are written asyncronously
     - Ensure logs are structured, and probably written as JSON
-    - Ensure older logs are moved to cold storage
+    - Ensure older logs are moved to cold storage or otherwise cleaned
 1. Ensure the app handles termination and interrupt signals
 1. Ensure configurations (if only the environment-specific configs) can be
 loaded, like from file, env var, flags, etc
@@ -66,6 +66,8 @@ loaded, like from file, env var, flags, etc
     - See [./app.md](./app.md) for more specific checks
     - See the relevant subpage in [./app/](./app/) based off granularity
 1. Implement error handling and add assertions
+1. Ensure connections (DB, HTTP, etc) are pooled with appropriate settings for
+   the application.
 1. Try to ensure the app can live for a decade without becoming too legacy.
 1. Ensure `README.md` is complete:
     - Document the purpose, abstract, or problem statement of this app
