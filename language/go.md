@@ -34,6 +34,8 @@ You'll want to set time limits for max read/write/idle times, and max header
 bytes. Otherwise, you can be DOSed.
 
 ```go
+slogHandler := slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{AddSource: true})
+slogger := slog.New(slogHandler)
 s := http.Server{
 	Addr:           "localhost:8080",
 	Handler:        router,
@@ -41,6 +43,7 @@ s := http.Server{
 	WriteTimeout:   90 * time.Second,
 	IdleTimeout:    120 * time.Second,
 	MaxHeaderBytes: 1 << 20,
+	ErrorLog:       slog.NewLogLogger(slogHandler, slog.LevelError),
 }
 ```
 

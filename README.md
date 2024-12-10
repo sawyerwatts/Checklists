@@ -56,9 +56,9 @@ mildly not super important to perform in order).
 
 1. Identify the app type(s) (console, daemon, CLI, web API, etc)
 1. Logging
-    - Ensure logs are written to a persistent location
-    - Ensure logs are written asyncronously
     - Ensure logs are structured, and probably written as JSON
+    - Ensure logs are written asyncronously
+    - Ensure logs are written to a persistent location
     - Ensure older logs are moved to cold storage or otherwise cleaned
 1. Ensure the app handles termination and interrupt signals
 1. Ensure configurations (if only the environment-specific configs) can be
