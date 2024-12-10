@@ -9,8 +9,8 @@ This has a ton of great ideas, many of which are referenced here.
 
 - Ensure a healthcheck endpoint exists (and has proper access management, if
 accessible at all)
-- Ensure an OpenAPI spec is accessible (if not a Swagger webpage), at least in
-lower environments
+- Ensure an OpenAPI spec is accessible (if not a Swagger/Scalar/etc webpage), at
+least in lower environments
     - An example `http` file isn't a terrible idea too
 
 ### Middleware
