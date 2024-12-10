@@ -37,13 +37,8 @@ loaded, like from file, env var, flags, etc
 1. See relevant other pages
     - See [./common.md](./common.md) for more specific checks
     - See the relevant subpage in [./app/](./app/) based off granularity
-1. Primary logic
-    - Prototype the happy path
-    - Implement error handling
-    - Add assertions
 1. Ensure connections (DB, HTTP, etc) are pooled with appropriate settings for
    the application.
-1. Try to ensure the app can live for a decade without becoming too legacy.
 1. Ensure `README.md` is complete:
     - Document the purpose, abstract, or problem statement of this app
         - Document the critical characteristics
@@ -57,6 +52,7 @@ loaded, like from file, env var, flags, etc
         - Ensure relevant C4 diagrams exist
     - Document the inputs and outputs/mutations/sideEffects of the app
     - Document how to perform common app updates
+1. Try to ensure the app can live for a decade without becoming too legacy.
 1. Operations: deployment and execution
     - Ensure the app is deployed automatically, ideally via a pipeline, else via
     a `makefile` or something
