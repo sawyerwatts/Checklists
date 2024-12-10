@@ -41,6 +41,7 @@ flowcharts).
 architectures), try to slice based off the design decision that will change more
 frequently (so slice vertically as business logic will change much more
 frequently than DB providers and data stores).
+- Can anything be made more generic to help lessen the coupling?
 
 ## Scalability and SLAs
 
