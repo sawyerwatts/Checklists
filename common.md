@@ -6,9 +6,10 @@
 it be made idempotent like via idempotency token HTTP headers?
 - Under what situations could the code run out of memory?
 - Are there any events that this code may want to push?
+- As an exercise when making changes to an existing codebase, what would the
+minimum required code changes be (if you didn't care about code quality,
+modularity, ownership, etc)?
 - See [./security.md][./security.md]
-- As an exercise, what would the minimum required code changes be (if you didn't
-care about code quality, modularity, ownership, etc)?
 
 ## Error Handling
 
@@ -24,13 +25,13 @@ care about code quality, modularity, ownership, etc)?
 
 ## Modularity
 
+- Is the module's API clear and as small as can be?
 - How well does each module isolate and abstract a design decision or
 implementation detail?
 - How's the locality of behavior? (This isn't true modularity but it's still
 helpful to consider, esp when locality of behavior is flouted for true
 modularity).
 - Is it clear why something should or should not be added to a module?
-- Is the module's API small and clear?
 - Dependency analysis: what does this module depend on (or use) and what modules
 depend (or use) on this module? Are modules loosely coupled via interfaces or
 via indirect usage (such as having the caller take the result from module A and
