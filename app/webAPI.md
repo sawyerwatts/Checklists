@@ -74,7 +74,7 @@ the API evolve without breaking changes
     `2024-12-10T18:59:38+00:00 UTC+00:00`, `2024-12-11T06:59:38+12:00 UTC+12:00`
 - Ensure objects are returned from operations, never arrays: arrays are much
 harder to make backwards compatible changes to
-- Ensure maps are returned as little as possible; instead, favor lists of
+- Ensure *nested* maps are used as little as possible; instead, favor lists of
 objects. This allows for more flexible schemas that don't require nearly as many
 breaking changes
 - Ensure backend-oriented services implement *proposed* standard RFC 9457. See
