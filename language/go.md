@@ -4,6 +4,12 @@
 necessary. Similarly, check if the result has a `Close()` method.
 - If passing a struct to a func, it is assumed that it will not be updated
 unless the docs say otherwise. Ensure this is the case.
+- *All* file writes are buffered, and closing the file doesn't ensure the buffer
+  is flushed. If this is unacceptable, use the `Sync` method (and then you can
+  ignore the err from `Close`)
+- Always read the `http` resp body, even if you don't use it. Otherwise, the
+connex may be closed. Use `_, _ = io.Copy(io.Discard, resp.Body)` to most
+efficiently read and discard the body
 
 ## Goroutines and Channels
 
