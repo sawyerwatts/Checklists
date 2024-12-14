@@ -49,8 +49,8 @@ s := http.Server{
 	Addr:              "localhost:8080",
 	Handler: http.TimeoutHandler(
 		router,
-		1000*time.Millisecond,
-		fmt.Sprintf("The request timed out as it ran longer than %n milliseconds", 1000)),
+		10_000*time.Millisecond,
+		fmt.Sprintf("The request timed out as it ran longer than %n milliseconds", 10_000)),
 	ReadHeaderTimeout: 500 * time.Millisecond,
 	ReadTimeout:       500 * time.Millisecond,
 	// WriteTimeout isn't configured since it closes the conn without
