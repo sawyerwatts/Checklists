@@ -48,7 +48,7 @@ very early
         - Use the issuer signing key to validate the JWT's signature
         - Is sent with HTTPS metadata
 - Ensure a durable idempotency middleware is available to POST operations
-- Ensure request timeouts are implemented (comprehensive, read, write, idle)
+- Ensure request timeouts are implemented (comprehensive, read, idle)
 - Ensure request sizes are limited*
 - Ensure rate limiting is implemented* (`429: Too many requests`)
 - Ensure backpressure limiting is implemented* (`503: Service Unavailable`)

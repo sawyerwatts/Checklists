@@ -10,6 +10,9 @@ unless the docs say otherwise. Ensure this is the case.
 - Always read the `http` resp body, even if you don't use it. Otherwise, the
 connex may be closed. Use `_, _ = io.Copy(io.Discard, resp.Body)` to most
 efficiently read and discard the body
+- When working with `http.Client`, recall that the default
+`http.Transport.MaxIdleConnsPerHost` is 2. You may want to override this.
+Also don't forget to configure timeouts.
 
 ## Goroutines and Channels
 
@@ -43,11 +46,16 @@ bytes. Otherwise, you can be DOSed.
 slogHandler := slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{AddSource: true})
 slogger := slog.New(slogHandler)
 s := http.Server{
-	Addr:           "localhost:8080",
-	Handler:        router,
-	ReadTimeout:    30 * time.Second,
-	WriteTimeout:   90 * time.Second,
-	IdleTimeout:    120 * time.Second,
+	Addr:              "localhost:8080",
+	Handler: http.TimeoutHandler(
+		router,
+		1000*time.Millisecond,
+		fmt.Sprintf("The request timed out as it ran longer than %n milliseconds", 1000)),
+	ReadHeaderTimeout: 500 * time.Millisecond,
+	ReadTimeout:       500 * time.Millisecond,
+	// WriteTimeout isn't configured since it closes the conn without
+	// sending a response code and doesn't propogate the context.
+	IdleTimeout:    30_000 * time.Millisecond,
 	MaxHeaderBytes: 1 << 20,
 	ErrorLog:       slog.NewLogLogger(slogHandler, slog.LevelError),
 }
