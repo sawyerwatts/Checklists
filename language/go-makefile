@@ -6,6 +6,9 @@
 main_package_path = ./cmd/example
 binary_name = example
 
+# TODO: Based off testing needs, you probably want to make a test/unit recipe,
+# and possibly others.
+
 # NOTE: Don't forget about build tags (which can be negated).
 
 # WARN: It can be helpful to set GOPROXY=direct when running `audit` as that
@@ -40,17 +43,12 @@ no-dirty:
 ## test: run all tests
 .PHONY: test
 test:
-	go test -v -race -buildvcs ./...
-
-## test/force: forcefully run all tests
-.PHONY: test/force
-test/force:
-	go test -v -race -buildvcs -count=1 ./...
+	go test -v -race -shuffle=on -parallel=8 -buildvcs ./...
 
 ## test/cover: run all tests and display coverage
 .PHONY: test/cover
 test/cover:
-	go test -v -race -buildvcs -coverprofile=/tmp/coverage.out ./...
+	go test -v -race -shuffle=on -parallel=8 -buildvcs -coverprofile=/tmp/coverage.out ./...
 	go tool cover -html=/tmp/coverage.out
 
 ## audit: run quality control checks

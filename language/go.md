@@ -13,6 +13,9 @@ efficiently read and discard the body
 - When working with `http.Client`, recall that the default
 `http.Transport.MaxIdleConnsPerHost` is 2. You may want to override this.
 Also don't forget to configure timeouts.
+- Ensure tests utilize `-parallel`/`t.Parallel` and `-shuffle`
+- Ensure the tests are catagorized somehow, be it `-short`, build tags, or OS
+env vars
 
 ## Goroutines and Channels
 
