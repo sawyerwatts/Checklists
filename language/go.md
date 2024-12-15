@@ -1,7 +1,11 @@
 # Go
 
+A number of these come from the amazing *100 Go Mistakes and How To Avoid Them*
+by Teiva Harsanyi.
+
 - If unsure, check a factory's docs to see if there are clean up steps
-necessary. Similarly, check if the result has a `Close()` method.
+necessary. Similarly, check if the result has a `Close()` method. You can also
+check the type's declaration as well.
 - If passing a struct to a func, it is assumed that it will not be updated
 unless the docs say otherwise. Ensure this is the case.
 - *All* file writes are buffered, and closing the file doesn't ensure the buffer
@@ -13,9 +17,6 @@ efficiently read and discard the body
 - When working with `http.Client`, recall that the default
 `http.Transport.MaxIdleConnsPerHost` is 2. You may want to override this.
 Also don't forget to configure timeouts.
-- Ensure tests utilize `-parallel`/`t.Parallel` and `-shuffle`
-- Ensure the tests are catagorized somehow, be it `-short`, build tags, or OS
-env vars
 
 ## Goroutines and Channels
 
@@ -40,7 +41,19 @@ Goroutines shut down before escaping?
 closing; to cascade upstream, use `errgroup.WithContext` and register downstream
 groups first
 
-## HTTP Servers
+## Testing and Benchmarks
+
+- Ensure tests utilize `-parallel`/`t.Parallel` and `-shuffle`
+- Ensure the tests are catagorized somehow, be it `-short`, build tags, or OS
+env vars
+- Be careful of expensive setup operations within a benchmark. The timer can be
+reset and stopped/started as needed.
+- To defend against inlining removing code, assign results to a local var, and
+at the end of the benchmark, assign the local var to a global var
+
+## Helpful Code Snippets
+
+### HTTP Servers
 
 You'll want to set time limits for max read/write/idle times, and max header
 bytes. Otherwise, you can be DOSed.
@@ -64,7 +77,7 @@ s := http.Server{
 }
 ```
 
-## Interrupt Support
+### Interrupt Support
 
 ```go
 quit := make(chan os.Signal, 1)
@@ -75,7 +88,7 @@ defer cancel()
 // Now shut stuff down w/ new ctx
 ```
 
-## Setting a defined timezone for the application
+### Setting a defined timezone for the application
 
 If it is desirable to explicitly control the timezone of all the `time.Time`s,
 this can be done with the following code or via an environment variable.
