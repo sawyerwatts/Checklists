@@ -5,19 +5,18 @@
 
 main_package_path = ./cmd/example
 binary_name = example
-go_env = source ./.env && GOOS=linux GOARCH=amd64
 
-# NOTE: Don't forget about build tags, like `-tags integration`!
+# NOTE: Don't forget about build tags (which can be negated).
 
 # WARN: It can be helpful to set GOPROXY=direct when running `audit` as that
 # will use the cached versions.
 
+# NOTE: Starting a line with @ (no subsequent space) will disable printing the
+# line that is being executed.
+
 # ==================================================================================== #
 # HELPERS
 # ==================================================================================== #
-
-# NOTE: Starting a line with @ (no subsequent space) will disable printing the
-# line that is being executed.
 
 ## help: print this help message
 .PHONY: help
@@ -41,29 +40,34 @@ no-dirty:
 ## test: run all tests
 .PHONY: test
 test:
-	$(go_env) go test -v -race -buildvcs ./...
+	go test -v -race -buildvcs ./...
 
 ## test/force: forcefully run all tests
 .PHONY: test/force
 test/force:
-	$(go_env) go test -v -race -buildvcs -count=1 ./...
+	go test -v -race -buildvcs -count=1 ./...
 
 ## test/cover: run all tests and display coverage
 .PHONY: test/cover
 test/cover:
-	$(go_env) go test -v -race -buildvcs -coverprofile=/tmp/coverage.out ./...
-	$(go_env) go tool cover -html=/tmp/coverage.out
+	go test -v -race -buildvcs -coverprofile=/tmp/coverage.out ./...
+	go tool cover -html=/tmp/coverage.out
 
 ## audit: run quality control checks
 .PHONY: audit
 audit: test
-	$(go_env) go mod tidy -diff
-	$(go_env) go mod verify
+	go mod tidy -diff
+	go mod verify
 	test -z "$(shell gofmt -l .)"
-	$(go_env) go vet ./...
+	go vet ./...
 	# WARN: You may decide to freeze these versions within a project
-	$(go_env) go run honnef.co/go/tools/cmd/staticcheck@latest -checks=all,-ST1000,-U1000 ./...
-	$(go_env) go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+	go run honnef.co/go/tools/cmd/staticcheck@latest -checks=all,-ST1000,-U1000 ./...
+	go run golang.org/x/vuln/cmd/govulncheck@latest ./...
+
+
+# ==================================================================================== #
+# DEVELOPMENT
+# ==================================================================================== #
 
 ## stub-.env: create a stubbed .env file
 .PHONY: stub-.env
@@ -71,44 +75,31 @@ stub-.env:
 	@echo -e "#!/bin/bash \n\
 	set -u \n\
 	# This script contains credentials and secrets, so it is present in the .gitignore \n\
-	export APP_PFX_MY_PASSWD=TODO:this \n\
+	export DBURL=TODO:this \n\
 	" > .env
 	@echo ".env has been stubbed, please go initialize the values"
 
 
-# ==================================================================================== #
-# DEVELOPMENT
-# ==================================================================================== #
-
 ## tidy: tidy modfiles and format .go files
 .PHONY: tidy
 tidy:
-	$(go_env) go mod tidy -v
-	$(go_env) go fmt ./...
+	go mod tidy -v
+	go fmt ./...
 
-## run: build the application as debug and run the binary
+## run: build/local and run the binary using .env
 .PHONY: run
 run: build/debug
-	$(go_env) /tmp/bin/${binary_name}
+	source ./.env && /tmp/bin/${binary_name}
 
-## run/live: run the application with reloading on file changes
-.PHONY: run/live
-run/live: build/debug
-	$(go_env) go run github.com/cosmtrek/air@v1.43.0 \
-		--build.cmd "make build" --build.bin "/tmp/bin/${binary_name}" --build.delay "100" \
-		--build.exclude_dir "" \
-		--build.include_ext "go, tpl, tmpl, html, css, scss, js, ts, sql, jpeg, jpg, gif, png, bmp, svg, webp, ico" \
-		--misc.clean_on_exit "true"
+## build/local: build the application with -race, -v, etc
+.PHONY: build/local
+build/local:
+	go build -v -race -o=/tmp/bin/${binary_name} ${main_package_path}
 
-## build: build the application without -race, -v, etc
-.PHONY: build
-build:
-	$(go_env) go build -o=/tmp/bin/${binary_name} ${main_package_path}
-
-## build/race: build the application with -race, -v, etc
-.PHONY: build/debug
-build/debug:
-	$(go_env) go build -v -race -o=/tmp/bin/${binary_name} ${main_package_path}
+## build/release: build the application without -race, -v, etc, for a specific OS and architecture
+.PHONY: build/release
+build/release:
+	GOOS=linux GOARCH=amd64 go build -o=/tmp/bin/${binary_name} ${main_package_path}
 
 ## build/clean: remove build artifacts
 .PHONY: build/clean
@@ -127,8 +118,7 @@ push: confirm audit no-dirty
 
 ## production/deploy: deploy the application to production
 .PHONY: production/deploy
-production/deploy: confirm audit no-dirty
-	$(go_env) go build -ldflags='-s' -o=/tmp/bin/linux_amd64/${binary_name} ${main_package_path}
-	upx -5 /tmp/bin/linux_amd64/${binary_name}
+production/deploy: confirm audit no-dirty build/release
+	upx -5 /tmp/bin/${binary_name}
 	# TODO: Include additional deployment steps here...
 
