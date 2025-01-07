@@ -7,6 +7,7 @@
 
 ## Recurring Tasks
 
+- What is the cadence to perform dependency wellness checks?
 - What is the cadence for updating packages?
 - What is the cadence for updating the language itself?
 - What is the cadence for updating the DB, OS, and other third-party services?
