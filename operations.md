@@ -4,6 +4,7 @@
 - Is FinOps desired and applied?
 - Are there any reports that we'd want written?
 - Are there backups? 3-2-1?
+- What is the disaster recovery plan?
 
 ## Recurring Tasks
 
