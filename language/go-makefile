@@ -84,14 +84,14 @@ tidy:
 	go mod tidy -v
 	go fmt ./...
 
-## run: build/local and run the binary using .env
+## run: build/debug and run the binary using .env
 .PHONY: run
-run: build/local
+run: build/debug
 	source ./.env && /tmp/bin/${binary_name}
 
-## build/local: build the application with -race, -v, etc
-.PHONY: build/local
-build/local:
+## build/debug: build the application with -race, -v, etc
+.PHONY: build/debug
+build/debug:
 	go build -v -race -o=/tmp/bin/${binary_name} ${main_package_path}
 
 ## build/release: build the application without -race, -v, etc, for a specific OS and architecture
