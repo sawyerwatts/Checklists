@@ -4,6 +4,7 @@
 - Is FinOps desired and applied?
 - Are there any reports that we'd want written?
 - Are there backups? 3-2-1?
+    - How long are logs needed before being moved to cold storage or deleted?
 - What is the disaster recovery plan?
 
 ## Recurring Tasks
@@ -19,6 +20,7 @@
 
 ## Monitoring/Alering
 
+- Are log levels warning/error/critical relayed to a ticketing system?
 - How many/rate failures/errors is too many over what period?
 - How many/rate successful requests/outputs/sideEffects?
 - Is there monitoring of the various scalability and SLA requirements?
