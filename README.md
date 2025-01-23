@@ -70,6 +70,7 @@ module/package, web API, etc
     - Prototype the happy path
     - Implement error handling
     - Add assertions
+1. How obvious is the code?
 1. Implement resilience, cancellation, and the necessary amount of durability
 for the use case
 1. Ensure resources are closed and check for other language-specific gotchas
