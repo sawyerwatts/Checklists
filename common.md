@@ -44,6 +44,14 @@ frequently (so slice vertically as business logic will change much more
 frequently than DB providers and data stores).
 - Can anything be made more generic to help lessen the coupling?
 
+## Complexity
+
+- Keep it simple, Sawyer!
+- Ensure all complexity is justifiable and necessary
+- An imperfect reframing of simplicity and complexity would be to determine how
+obvious or obtuse the code is
+    - But also a good abstraction will make obtuseness "disappear"
+
 ## Scalability and SLAs
 
 - How many requests per second?

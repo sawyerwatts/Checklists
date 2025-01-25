@@ -37,6 +37,12 @@ loaded, like from file, env var, flags, etc
 1. See relevant other pages
     - See [./common.md](./common.md) for more specific checks
     - See the relevant subpage in [./app/](./app/) based off granularity
+1. Outbound network connections
+    - Ensure connections are pooled appropriately (to ensure quicker requests
+    and to avoid port exhaustion)
+    - Ensure request timeouts are configured
+    - Ensure connections periodically expire and need to be re-established (to
+    protect against DNS changes)
 1. Ensure connections (DB, HTTP, etc) are pooled with appropriate settings for
    the application.
 1. Ensure `README.md` is complete:
