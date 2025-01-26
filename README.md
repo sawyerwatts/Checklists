@@ -70,8 +70,10 @@ loaded, like from file, env var, flags, etc
 Here is a list of drafts to implementing a new operation into a system.
 
 1. Identify the granularity of the lower-level coding, like function, service,
-module/package, web API, etc
-1. Create the cursory design
+package, web API, etc
+1. Create the cursory design. Could either:
+    - Decompose temporally and refactor into modules later
+    - Decompose into modules
 1. Primary logic
     - Prototype the happy path
     - Implement error handling

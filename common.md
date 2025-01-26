@@ -34,9 +34,8 @@ complexity: essential and incidental.
 work I've encountered that discusses complexity and modularity in depth.
 
 Simplicity and modularity exist at all granularities, thus everything can be evaluated in terms of
-simplicity and modularity/abstraction of its interface/API (comprised of its syntax and its
-documentation): a function/class/etc is a module, and that class can have a lot of incidental
-complexity in its interface (looking at you, .NET's `HttpClient`).
+simplicity and modularity/abstraction of its interface (comprised of its syntax and its
+documentation).
 
 Cognative load is the amount of domain, language, codebase, etc knowledge necessary to understand
 a piece of code.
@@ -49,23 +48,24 @@ a piece of code.
 
 Conceptually, at many different granularities, like functions, classes, directories, and programs,
 complexity and cognative load can be managed via encapsulation and dependency analysis (AKA
-coupling).
+coupling). This is done by creating modules, de facto sources of truth for information
+(requirements, invariants, implementation details, etc).
 
-- Is the interface small (thus likely simpler for clients and a good encapsulation)?
-    - What are the important details?
-    - What are the unimportant details?
-    - Are these details' significance appropriately reflected in the API?
-- Is the module deep (thus likely well encapsulated and/or providing value as an encapsulation)?
-- How is the cognative load? What are the dependencies, and how tight are they?
-    - Can anything be made more generic to help lessen the coupling?
-- How well does each module isolate and abstract a design decision or
-implementation detail (thus likely well encapsulated)?
-    - Is it obvious what this module does and does not (should and should not) contain?
-    - What is the blast radius for, or difficulty in implementing, any particular change?
-- Modularity heuristics and smells
-    - How's the locality of behavior?
-    - When in doubt, organize code by feature (and not by execution flow or
-    flowcharts).
+Temporal decomposition is when a system is decomposed based off the workflow being implemented.
+These are not (necessarily) modules!
+
+1. What is the information being encapsulated by this module?
+    1. Is it obvious what this module does and does not (should and should not) contain?
+1. Is the interface small (thus likely simpler for clients and a good encapsulation)?
+    1. What are the important details?
+    1. What are the unimportant details?
+    1. Are these details' significance appropriately reflected in the interface?
+1. Is the module deep (thus likely well encapsulated and/or providing value as an encapsulation)?
+1. How is the cognative load? What are the dependencies, and how tight are they?
+    1. Can anything be made more generic to help loosen the coupling and improve encapsulation?
+    1. Is this the simplest interface with the least dependecies?
+1. What is the blast radius for, and/or difficulty in implementing, any particular change to the
+encapsulated knowledge, implementation details, or dependencies?
 
 ## Scalability and SLAs
 
