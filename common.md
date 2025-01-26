@@ -23,34 +23,49 @@ modularity, ownership, etc)?
 - Likely want to deliniate between developer- and business-bound errors.
 - Be mindful of error sources, particularly other web APIs
 
-## Modularity
+## Tackling Complexity through Simplicity and Modularity
 
-- Is the module's API clear and as small as can be?
+*On the Criteria To Be Used in Decomposing Systems into Modules* by David Parnas is a great read.
+
+*No Silver Bullet—Essence and Accident in Software Engineering* by Fred Brooks defines two forms of
+complexity: essential and incidental.
+
+*A Philosophy of Software Design* by John Ousterhout is a seminal in this section as it is the best
+work I've encountered that discusses complexity and modularity in depth.
+
+Simplicity and modularity exist at all granularities, thus everything can be evaluated in terms of
+simplicity and modularity/abstraction of its interface/API (comprised of its syntax and its
+documentation): a function/class/etc is a module, and that class can have a lot of incidental
+complexity in its interface (looking at you, .NET's `HttpClient`).
+
+Cognative load is the amount of domain, language, codebase, etc knowledge necessary to understand
+a piece of code.
+
+### Simplicity
+
+- How obvious is the code? How is the cognative load?
+
+### Modularity
+
+Conceptually, at many different granularities, like functions, classes, directories, and programs,
+complexity and cognative load can be managed via encapsulation and dependency analysis (AKA
+coupling).
+
+- Is the interface small (thus likely simpler for clients and a good encapsulation)?
+    - What are the important details?
+    - What are the unimportant details?
+    - Are these details' significance appropriately reflected in the API?
+- Is the module deep (thus likely well encapsulated and/or providing value as an encapsulation)?
+- How is the cognative load? What are the dependencies, and how tight are they?
+    - Can anything be made more generic to help lessen the coupling?
 - How well does each module isolate and abstract a design decision or
-implementation detail?
-- How's the locality of behavior? (This isn't true modularity but it's still
-helpful to consider, esp when locality of behavior is flouted for true
-modularity).
-- Is it clear why something should or should not be added to a module?
-- Dependency analysis: what does this module depend on (or use) and what modules
-depend (or use) on this module? Are modules loosely coupled via interfaces or
-via indirect usage (such as having the caller take the result from module A and
-pass it to module B)?
-- When in doubt, organize code by feature (and not by execution flow or
-flowcharts).
-- If a module could be sliced several ways (such as horizontal vs vertical
-architectures), try to slice based off the design decision that will change more
-frequently (so slice vertically as business logic will change much more
-frequently than DB providers and data stores).
-- Can anything be made more generic to help lessen the coupling?
-
-## Complexity
-
-- Keep it simple, Sawyer!
-- Ensure all complexity is justifiable and necessary
-- An imperfect reframing of simplicity and complexity would be to determine how
-obvious or obtuse the code is
-    - But also a good abstraction will make obtuseness "disappear"
+implementation detail (thus likely well encapsulated)?
+    - Is it obvious what this module does and does not (should and should not) contain?
+    - What is the blast radius for, or difficulty in implementing, any particular change?
+- Modularity heuristics and smells
+    - How's the locality of behavior?
+    - When in doubt, organize code by feature (and not by execution flow or
+    flowcharts).
 
 ## Scalability and SLAs
 
