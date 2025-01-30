@@ -37,12 +37,6 @@ loaded, like from file, env var, flags, etc
 1. See relevant other pages
     - See [./common.md](./common.md) for more specific checks
     - See the relevant subpage in [./app/](./app/) based off granularity
-1. Outbound network connections
-    - Ensure connections are pooled appropriately (to ensure quicker requests
-    and to avoid port exhaustion)
-    - Ensure request timeouts are configured
-    - Ensure connections periodically expire and need to be re-established (to
-    protect against DNS changes)
 1. Ensure connections (DB, HTTP, etc) are pooled with appropriate settings for
    the application.
 1. Ensure `README.md` is complete:
@@ -81,6 +75,12 @@ package, web API, etc
 1. How obvious is the code?
 1. Implement resilience, cancellation, and the necessary amount of durability
 for the use case
+1. Review outbound network connections
+    - Ensure connections are pooled appropriately (to ensure quicker requests
+    and to avoid port exhaustion)
+    - Ensure request timeouts are configured
+    - Ensure connections periodically expire and need to be re-established (to
+    protect against DNS changes)
 1. Ensure resources are closed and check for other language-specific gotchas
 1. Ensure the written code is refactored into helpers
 1. Ensure logging is sufficient

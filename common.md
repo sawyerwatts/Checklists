@@ -35,7 +35,8 @@ work I've encountered that discusses complexity and modularity in depth.
 
 Simplicity and modularity exist at all granularities, thus everything can be evaluated in terms of
 simplicity and modularity/abstraction of its interface (comprised of its syntax and its
-documentation).
+documentation). Cognative load is managed via information and information dependency management via
+modules.
 
 Cognative load is the amount of domain, language, codebase, etc knowledge necessary to understand
 a piece of code.
@@ -67,6 +68,7 @@ These are not (necessarily) modules!
     1. How could this module be implemented without any given dependency?
 1. What is the blast radius for, and/or difficulty in implementing, any particular change to the
 encapsulated knowledge, implementation details, or dependencies?
+1. How is the cumulative complexity of the system's interfaces?
 
 ## Scalability and SLAs
 

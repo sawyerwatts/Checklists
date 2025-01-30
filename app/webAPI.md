@@ -8,7 +8,7 @@ This has a ton of great ideas, many of which are referenced here.
 ## App-Level
 
 - Ensure a healthcheck endpoint exists (and has proper access management, if
-accessible at all)
+accessible at all). These should provide confidence in deployments.
 - Ensure an OpenAPI spec is accessible (if not a Swagger/Scalar/etc webpage), at
 least in lower environments
     - An example `http` file isn't a terrible idea too
