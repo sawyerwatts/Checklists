@@ -9,9 +9,9 @@ but the value is to ensure that all the items are considered and not forgotten.
 This is an amalgamation of various sources Sawyer has seen online, in books,
 and from experience.
 
-Sawyer is a backend developer that primarily writes web APIs and console/batch
-applications, and occassionally writes CLI tools. This is the perspective these
-checklists are written from.
+Sawyer is a backend-focused developer that primarily writes web APIs and
+console/batch applications, and occassionally writes CLI tools. This is the
+perspective these checklists are written from.
 
 ## Evergreen Drafts
 
