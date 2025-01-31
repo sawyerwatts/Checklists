@@ -3,9 +3,13 @@
 - What are the governance policies, if any?
 - Is FinOps desired and applied?
 - Are there any reports that we'd want written?
-- Are there backups? 3-2-1?
-    - How long are logs needed before being moved to cold storage or deleted?
 - What is the disaster recovery plan?
+
+## Storage
+
+- Are all persistent media (like logs) archived?
+- When are archives moved to cold storage?
+- Are there backups? 3-2-1?
 
 ## Recurring Tasks
 
