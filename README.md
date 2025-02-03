@@ -81,7 +81,8 @@ for the use case
     - Ensure request timeouts are configured
     - Ensure connections periodically expire and need to be re-established (to
     protect against DNS changes)
-1. Ensure resources are closed and check for other language-specific gotchas
+1. Ensure unmanaged resources are closed and check for other language-specific
+gotchas
 1. Ensure the written code is refactored into helpers
 1. Ensure logging is sufficient
 1. Ensure performance and caching are sufficient
