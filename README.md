@@ -73,6 +73,11 @@ package, web API, etc
     - Implement error handling
     - Add assertions
 1. How obvious is the code?
+1. Review the initial design, especially targetting the granularity's finer
+details, like that a web API implements content negotionation, that the code
+is modularity, etc
+    - See [./common.md](./common.md) for more specific checks
+    - See the relevant subpage in [./app/](./app/) based off granularity
 1. Implement resilience, cancellation, and the necessary amount of durability
 for the use case
 1. Review outbound network connections
@@ -83,15 +88,9 @@ for the use case
     protect against DNS changes)
 1. Ensure unmanaged resources are closed and check for other language-specific
 gotchas
-1. Ensure the written code is refactored into helpers
 1. Ensure logging is sufficient
 1. Ensure performance and caching are sufficient
 1. Ensure code is readable
-1. Review the initial design, especially targetting the granularity's finer
-details, like that a web API implements content negotionation, that the code
-is modularity, etc
-    - See [./common.md](./common.md) for more specific checks
-    - See the relevant subpage in [./app/](./app/) based off granularity
 1. Try to ensure the operation can live for a decade without becoming too legacy.
 1. Ensure inlined docs and wiki are written
 1. How do devs easily establish correctness of the code and regression test the
