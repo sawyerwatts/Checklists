@@ -66,9 +66,9 @@ These are not (necessarily) modules!
     1. Can anything be made more generic to help loosen the coupling and improve encapsulation?
     1. Is this the simplest interface with the least dependecies?
     1. How could this module be implemented without any given dependency?
-    1. Consider what potential helpers could exist to better isolate different knowledge.
 1. What is the blast radius for, and/or difficulty in implementing, any particular change to the
 encapsulated knowledge, implementation details, or dependencies?
+    1. Consider what potential helpers could exist to better isolate different knowledge.
 1. How is the cumulative complexity of the system's interfaces?
 
 ## Scalability and SLAs
