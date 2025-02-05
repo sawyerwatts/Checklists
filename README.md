@@ -71,8 +71,7 @@ package, web API, etc
 1. Primary logic
     - Prototype the happy path
     - Implement error handling
-    - Add assertions
-1. How obvious is the code?
+    - Add assertions, especially around module boundaries
 1. Review the initial design, especially targetting the granularity's finer
 details, like that a web API implements content negotionation, that the code
 is modularity, etc
@@ -90,7 +89,6 @@ for the use case
 gotchas
 1. Ensure logging is sufficient
 1. Ensure performance and caching are sufficient
-1. Ensure code is readable
 1. Try to ensure the operation can live for a decade without becoming too legacy.
 1. Ensure inlined docs and wiki are written
 1. How do devs easily establish correctness of the code and regression test the
