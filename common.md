@@ -43,7 +43,8 @@ a piece of code.
 
 ### Simplicity
 
-- How obvious is the code? How is the cognative load?
+- How obvious is the code, in a mechanical sense?
+- How is the cognative load?
 
 ### Modularity
 
