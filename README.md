@@ -93,5 +93,6 @@ gotchas
 1. Ensure inlined docs and wiki are written
 1. How do devs easily establish correctness of the code and regression test the
 code? (Automated tests are usually the answer here).
+    - If you haven't already, this would be a good time to abstract impurities.
 1. Monitoring: how do you ensure this feature keeps working?
 
