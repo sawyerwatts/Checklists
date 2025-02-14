@@ -94,5 +94,6 @@ gotchas
 1. How do devs easily establish correctness of the code and regression test the
 code? (Automated tests are usually the answer here).
     - If you haven't already, this would be a good time to abstract impurities.
+    - Especially test the boundaries between modules
 1. Monitoring: how do you ensure this feature keeps working?
 
