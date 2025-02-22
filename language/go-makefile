@@ -1,6 +1,9 @@
 # Kudos to Alex for the original version:
 # https://www.alexedwards.net/blog/a-time-saving-makefile-for-your-go-projects
 
+# WARN: This was written during Go 1.23, before the go tool was created. This needs to be
+# updated with that in mind.
+
 # NOTE: .DEFAULT_GOAL = run
 
 main_package_path = ./cmd/example
