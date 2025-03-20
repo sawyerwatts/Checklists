@@ -19,6 +19,9 @@ Within a list, these steps don't need to be in complete isolation (like logging
 can be done whenever earlier), but the goal is to ensure that an iteration is
 always performed.
 
+At any and every stage of the development process: does *Code Complete 2nd
+Edition* have a checklist for this activity?
+
 ### App-Level
 
 Here is a list of drafts to implementing the top level of an application. These
@@ -97,4 +100,5 @@ code? (Automated tests are usually the answer here).
     - Especially test the boundaries between modules, and between impurities.
     - Also rigorously test with various inputs, possibly with fuzzing.
 1. Monitoring: how do you ensure this feature keeps working?
+1. Ensure design decisions are documented.
 
