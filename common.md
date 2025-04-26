@@ -33,6 +33,8 @@ complexity: essential and incidental.
 *A Philosophy of Software Design* by John Ousterhout is a seminal in this section as it is the best
 work I've encountered that discusses complexity and modularity in depth.
 
+*Simple Made Easy* by Rich Hickey is great too.
+
 Simplicity and modularity exist at all granularities, thus everything can be evaluated in terms of
 simplicity and modularity/abstraction of its interface (comprised of its syntax and its
 documentation). Cognative load is managed via information and information dependency management via
@@ -41,10 +43,9 @@ modules.
 Cognative load is the amount of domain, language, codebase, etc knowledge necessary to understand
 a piece of code.
 
-### Simplicity
-
-- How obvious is the code, in a mechanical sense?
-- How is the cognative load?
+- Simplicity: is when something is not tanged; it is a single track.
+- Simplicity: how is the cognative load?
+- Easiness: how obvious is the code, in a mechanical sense?
 
 ### Modularity
 
