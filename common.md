@@ -46,6 +46,7 @@ a piece of code.
 - Simplicity: is when something is not tanged; it is a single track or logical thread.
 - Simplicity: how is the cognative load?
 - Easiness: how obvious is the code, in a mechanical sense?
+- How's the surface area, or clutter, of the code?
 
 ### Modularity
 
