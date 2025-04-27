@@ -43,7 +43,7 @@ modules.
 Cognative load is the amount of domain, language, codebase, etc knowledge necessary to understand
 a piece of code.
 
-- Simplicity: is when something is not tanged; it is a single track.
+- Simplicity: is when something is not tanged; it is a single track or logical thread.
 - Simplicity: how is the cognative load?
 - Easiness: how obvious is the code, in a mechanical sense?
 
