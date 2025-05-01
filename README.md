@@ -28,6 +28,7 @@ Here is a list of drafts to implementing the top level of an application. These
 are much less strictly ordered than the operation-level drafts (even if that is
 mildly not super important to perform in order).
 
+1. Is there a holistic view?
 1. Identify the app type(s) (console, daemon, CLI, web API, etc)
 1. Logging
     - Ensure logs are structured, and probably written as JSON
