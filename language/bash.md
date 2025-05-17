@@ -101,3 +101,46 @@ tabs). This is generally more helpful, especially when file names have spaces.
   # Anderson da Silva
   ```
 
+## find
+
+- `-exec CMD {} +` replaces {} with all matching file names
+- `-exec CMD {} \;` replaces {} with one file name and runs the command many times
+
+## xargs
+
+xargs is a essentially a foreach operator.
+
+Consider the following commands.
+
+```sh
+$ ls
+PS_COVERAGE_20240101.txt PS_PATIENT_20240101.txt
+
+$ ls -1 \
+| xargs --max-procs=$(ls -1 | wc -l) -I {} sh -c \
+    'cat $1 | sed "s/^PUT //g" | jq > $(echo $1 | cut -d"_" -f2).json' - '{}'
+
+$ rm *.txt
+
+$ ls
+COVERAGE.json PATIENT.json
+```
+
+`-n N` is another way to specify how many args per line to consume.
+
+`-p` is a great debugging tool.
+
+```sh
+# Here's an example of having xargs call a func. Note that export -f appears to
+# be required.
+function foo() {
+	echo 'yay!'
+	echo $1
+}
+export -f foo
+
+foo 'pre-call'
+
+ls -1 | xargs -I {} bash -c 'foo "{}"'
+```
+
