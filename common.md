@@ -47,6 +47,8 @@ a piece of code.
 - Simplicity: how is the cognative load?
 - Easiness: how obvious is the code, in a mechanical sense?
 - How's the surface area, or clutter, of the code?
+- How's the overall simplicity?
+- How difficult is the system to implement and understand?
 
 ### Modularity
 
@@ -66,7 +68,8 @@ These are not (necessarily) modules!
     1. Are these details' significance appropriately reflected in the interface?
 1. Is the module deep (thus likely well encapsulated and/or providing value as an encapsulation)?
 1. How is the cognative load? What are the dependencies, and how tight are they?
-    1. Can anything be made more generic to help loosen the coupling and improve encapsulation?
+    1. Can anything be made more generic to help loosen the coupling and improve encapsulation? Does
+    this become too generic?
     1. Is this the simplest interface with the least dependecies?
     1. How could this module be implemented without any given dependency?
 1. What is the blast radius for, and/or difficulty in implementing, any particular change to the

@@ -106,6 +106,19 @@ tabs). This is generally more helpful, especially when file names have spaces.
 - `-exec CMD {} +` replaces {} with all matching file names
 - `-exec CMD {} \;` replaces {} with one file name and runs the command many times
 
+## Recursively Crawling a Directory
+
+`find` is the way to crawl directories, but `-exec` (and `xargs`?) don't support failing the script
+if an error occurs, so here's a much better way to do this:
+
+```shell
+# You may need to add `IFS= ` immediately before `read` depending on the content of the file names.
+find "./$db" -type f -name "*.sql" -print0 | while IFS= read -r -d '' file
+do
+  echo "$file"
+done
+```
+
 ## xargs
 
 xargs is a essentially a foreach operator.
@@ -142,5 +155,35 @@ export -f foo
 foo 'pre-call'
 
 ls -1 | xargs -I {} bash -c 'foo "{}"'
+```
+
+## find + xargs
+
+Find and xargs play very nice by utilizing null-delimiters (`-print0` and `-0`). Here's an example
+(that also uses a function).
+
+```shell
+echo -e "\n> Finding and applying SQL files"
+function apply_sql_file()
+{
+  db=${1:-}
+  if [[ -z "$db" ]]
+  then
+    echo "Missing db name"
+    exit 1
+  fi
+
+  file_name=${2:-}
+  if [[ -z "$file_name" ]]
+  then
+    echo "Missing file name"
+    exit 1
+  fi
+
+  echo -e "\n> Applying file $file_name"
+  /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U SA -P "$MSSQL_SA_PASSWORD" -d "$db" -i "$file_name"
+}
+export -f apply_sql_file
+find "./$db/" -name "*.sql" -print0 | xargs -0 -I{} bash -c 'apply_sql_file $0 $1' $db {}
 ```
 
