@@ -30,6 +30,7 @@ mildly not super important to perform in order).
 
 1. Is there a holistic view?
 1. Identify the app type(s) (console, daemon, CLI, web API, etc)
+1. Consider [simplicity](./simplicity.md).
 1. Logging
     - Ensure logs are structured, and probably written as JSON
     - Ensure logs are written asyncronously
@@ -69,7 +70,7 @@ Here is a list of drafts to implementing a new operation into a system.
 
 1. Identify the granularity of the lower-level coding, like function, service,
 package, web API, etc
-1. Create the cursory design. Could either:
+1. Consider [simplicity](./simplicity.md) and create the cursory design. Could either:
     - Decompose temporally and refactor into modules later
     - Decompose into modules
 1. Primary logic
