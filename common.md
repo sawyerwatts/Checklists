@@ -2,6 +2,8 @@
 
 ## Misc
 
+- Consider documentation: is there anything that would be important for a new
+dev to know?
 - Is this operation idempotent? If not, what is the point of no return? Can
 it be made idempotent like via idempotency token HTTP headers?
 - Under what situations could the code run out of memory?
