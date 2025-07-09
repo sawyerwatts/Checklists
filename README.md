@@ -12,10 +12,8 @@ and occassionally writes CLI tools. This is the perspective these checklists are
 
 ## Getting Started
 
-Within a list, these steps don't need to be in complete isolation (like logging can be done whenever
-earlier), but the goal is to ensure that an iteration is always performed. Several docs call this
-out as well, but this is not strictly a top-down, waterfall list, anything can feed back into
-"previous" steps, especially design and implementation.
+Several docs call this out as well, but this is not strictly a top-down, waterfall list, anything
+can feed back into "previous" steps, especially design and implementation.
 
 - [ ] Remember: ownership of IT, engagement in business needs, and a holistic eye will produce the
 best software.
