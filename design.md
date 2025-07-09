@@ -74,7 +74,7 @@ it's unusable.
 Here are some criteria to evaluate the designs, ideally both in isolation and cummulatively (these
 will likely recursively impact designs):
 
-- [ ] Does it handle the happy path, sad path, and bad path?
+- [ ] Does it handle the happy path and error handling strategy?
     - [ ] Do partial failures exist, especially in batch jobs? How well are those handled?
 - [ ] How's the focus?
 - [ ] How's the clarity?
