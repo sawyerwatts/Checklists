@@ -5,8 +5,7 @@ here, as well as OWASP's top 10 lists. Additionally, specific tools and
 languages have their own security weaknesses as well that will need to be
 considered.
 
-As with [app.md](./app.md), more specific information may be found in the
-various subdirs of [app/](./app/).
+More specific information may be found in the various subdirs of [app/](./app/).
 
 ## STRIDE
 
