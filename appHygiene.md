@@ -27,6 +27,7 @@ file, env var, flags, etc
         - [ ] Ensure relevant C4 diagrams exist
     - [ ] Document the inputs and outputs/mutations/sideEffects of the app
     - [ ] Document how to perform common app updates, if any
+    - [ ] Is there anything else that would be important for a new dev to know?
 - [ ] Try to ensure the app can live for a decade without becoming too legacy.
 - [ ] Operations: deployment and execution
     - [ ] Ensure the app is deployed automatically, ideally via a pipeline, else via a `makefile` or

@@ -27,8 +27,5 @@ doubt, [Here](./requirements.md) are some very basic questions.
 - [ ] If a new repo is necessary, ensure [repo hygiene](./repoHygiene.md)
 - [ ] If a new application is necessary, ensure [application hygiene](./appHygiene.md).
 - [ ] If a new feature is being implemented, ensure [feature hygiene](./featureHygiene.md).
-
-TODO: review and link operations; design, here, app, and feature??
-
-TODO: review feature hygiene, add links
+- [ ] Take a pass at [operations](./operations.md) as relevant
 

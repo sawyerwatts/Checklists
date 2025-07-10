@@ -81,6 +81,7 @@ will likely recursively impact designs):
 - [ ] How's the cognative load?
 - [ ] How's the modularity? Is there semantic decoupling or only syntactic?
 - [ ] How's the conceptual cohesion?
+- [ ] How's the debuggability?
 - [ ] How's the implementation cost (particularly for setting up the infrastructure)?
     - [ ] If relevant, how's the DevFinOps?
 - [ ] Are there any events that would be beneficial to push?
