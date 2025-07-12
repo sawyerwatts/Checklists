@@ -85,6 +85,7 @@ will likely recursively impact designs):
 - [ ] How's the implementation cost (particularly for setting up the infrastructure)?
     - [ ] If relevant, how's the DevFinOps?
 - [ ] Are there any events that would be beneficial to push?
+- [ ] How could the components run out of memory or disk?
 - [ ] How much idempotency can there be? Where is the point of no return?
 - [ ] How much can state be isolated? Less state means less that needs to be reset upon failure
 - [ ] Is there an appropriate amount of checkpointing? Is there an appropriate amount of durability?
