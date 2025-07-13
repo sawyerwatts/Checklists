@@ -30,6 +30,8 @@ considered:
     DNS changes)
 - [ ] Ensure unmanaged resources are closed and check for other language-specific gotchas
 - [ ] Ensure logging is sufficient
+- [ ] How could this code run out of memory or disk?
+- [ ] How could this block for a long time (AKA paging isn't implemented)?
 - [ ] How does the performance fare against [scalability and SLA requirements](./scalabilityAndSla.md)?
 - [ ] How does the implementation fare against [security concerns](./security.md)?
 - [ ] Try to ensure the feature can live for a decade without becoming too legacy.
