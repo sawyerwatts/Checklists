@@ -1,23 +1,31 @@
 # Feature Hygine
 
-When implementing a new feature within an application, here are some things that can be
-considered:
+When implementing a new feature within an application, here are some things that can be considered
+(as with all of these checklists, the order isn't strictly relevant - it's a very fluid and cyclic
+and iterative process):
 
-- [ ] What is the context for this feature?
-- [ ] Define the error handling strategy and prototype the happy path
-    - [ ] True immutable data types can be nice, but depending on the app, they seem to frequently
-    be more pain than they're worth - that said, treating inputs as immuatble usually ends well
-    - [ ] IO-less functions (if not outright pure functions) tend to do real good, and quasi-pure
-    functions (like for a mutable append-only error stream) tend to be the sweet spot
+- [ ] What is the context and goal for this feature?
+- [ ] Define the broad error handling strategy
     - [ ] Do partial failures exist?
     - [ ] Do we care to destinguish errors between repeatable business errors, repeatable IT
     errors, and/or one-off (network) IT errors?
-        - It can be easier to manage these error types if the business code are IO-less
-        functions called by a coordination service, but also that forces other design
-        constraints onto the business code, so it depends.
+- [ ] Rough draft the happy path
+    - Mutable, shared state between functions/classes/etc is generally the enemy
+    - Consider parameters immutable (unless situationally very beneficial otherwise)
+    - IO-less modules are likely going to be your friend, especially around error handling due to
+    the innate distinction between repeatable and non-repeatable errors, but also that forces other
+    design constraints onto the code.
+    - When dealing with gnarly state or data management problems, try to employ FP, but keep OOP and
+    DI options in mind as well. FP-style may be be more brittle, but OOP will likely introduce
+    shared state problems (and its use of obscured side effect vectors can make it less obvious), so
+    method DI / pass by reference can be a nice intermediate.
 - [ ] Implement error handling
-    - [ ] In exception-based languages, assume all functions can throw (unless they state/return
-    otherwise)
+    - [ ] Bulkhead try/catch(es) as appropriate
+    - [ ] Every line will evaluate to either an expression or throw an exception.
+    - [ ] Under what situation will this line throw?
+    - [ ] How will the feature behave if a given line throws?
+- [ ] Have all the output vectors been considered? Return, exception, out/mutated parameters, side
+effects to services/infra, etc
 - [ ] Add assertions and guards, especially around module boundaries
 - [ ] Implement resilience, cancellation, and the necessary amount of durability for the feature
 - [ ] See the relevant subpage in [./app/](./app/) as appropriate
