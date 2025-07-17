@@ -3,6 +3,7 @@
 When implementing a new feature within an application, here are some things that can be
 considered:
 
+- [ ] What is the context for this feature?
 - [ ] What is the error handling strategy?
     - [ ] Do partial failures exist?
     - [ ] Do we care to destinguish errors between repeatable business errors, repeatable IT
@@ -12,7 +13,9 @@ considered:
         constraints onto the business code, so it depends.
 - [ ] Prototype the happy path
 - [ ] Implement error handling
-- [ ] Add assertions, especially around module boundaries
+    - [ ] In exception-based languages, assume all functions can throw (unless they state/return
+    otherwise)
+- [ ] Add assertions and guards, especially around module boundaries
 - [ ] Implement resilience, cancellation, and the necessary amount of durability for the feature
 - [ ] See the relevant subpage in [./app/](./app/) as appropriate
 - [ ] Consider (re-)evaluating the [design](./design.md) of the written code, or at least these items:
