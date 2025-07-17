@@ -11,6 +11,7 @@ considered:
         - It can be easier to manage these error types if the business code are IO-less
         functions called by a coordination service, but also that forces other design
         constraints onto the business code, so it depends.
+        - Pure functions are usually also a win
 - [ ] Prototype the happy path
 - [ ] Implement error handling
     - [ ] In exception-based languages, assume all functions can throw (unless they state/return
