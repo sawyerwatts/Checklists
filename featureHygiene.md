@@ -4,15 +4,15 @@ When implementing a new feature within an application, here are some things that
 considered:
 
 - [ ] What is the context for this feature?
-- [ ] What is the error handling strategy?
+- [ ] Define the error handling strategy and prototype the happy path
+    - [ ] IO-less functions (if not outright pure functions) tend to do real good, and quasi-pure
+    functions (like for a mutable append-only error stream) tend to be the sweet spot
     - [ ] Do partial failures exist?
     - [ ] Do we care to destinguish errors between repeatable business errors, repeatable IT
     errors, and/or one-off (network) IT errors?
         - It can be easier to manage these error types if the business code are IO-less
         functions called by a coordination service, but also that forces other design
         constraints onto the business code, so it depends.
-        - Pure functions are usually also a win
-- [ ] Prototype the happy path
 - [ ] Implement error handling
     - [ ] In exception-based languages, assume all functions can throw (unless they state/return
     otherwise)
