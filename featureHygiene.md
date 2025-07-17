@@ -5,6 +5,8 @@ considered:
 
 - [ ] What is the context for this feature?
 - [ ] Define the error handling strategy and prototype the happy path
+    - [ ] True immutable data types can be nice, but depending on the app, they seem to frequently
+    be more pain than they're worth - that said, treating inputs as immuatble usually ends well
     - [ ] IO-less functions (if not outright pure functions) tend to do real good, and quasi-pure
     functions (like for a mutable append-only error stream) tend to be the sweet spot
     - [ ] Do partial failures exist?
