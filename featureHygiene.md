@@ -24,9 +24,9 @@ and iterative process):
     - [ ] Every line will evaluate to either an expression or throw an exception.
     - [ ] Under what situation will this line throw?
     - [ ] How will the feature behave if a given line throws?
+- [ ] Add assertions and guards, especially around module boundaries
 - [ ] Have all the output vectors been considered? Return, exception, out/mutated parameters, side
 effects to services/infra, etc
-- [ ] Add assertions and guards, especially around module boundaries
 - [ ] Implement resilience, cancellation, and the necessary amount of durability for the feature
 - [ ] See the relevant subpage in [./app/](./app/) as appropriate
 - [ ] Consider (re-)evaluating the [design](./design.md) of the written code, or at least these items:
