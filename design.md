@@ -11,8 +11,8 @@ it must be read and learned and understood.
 
 Code understandability has several components: Cognative Load, Focus, Clarity, Modularity, and
 Compatibility. Critcally, these each can be evaluated *Locally*/*isolated* and
-*globally*/*Cummulatively*, as well as *Essential* vs *Incidental*. In regards to decoupling, there
-is *mechanical*/*syntactic* decoupling and *conceptual*/*semantic* decouling.
+*globally*/*Cummulatively*/*Holistically*, as well as *Essential* vs *Incidental*. In regards to
+decoupling, there is *mechanical*/*syntactic* decoupling and *conceptual*/*semantic* decouling.
 
 Of note, this does not use the term simplicity because simplicity is in the eye of the beholder,
 And it is better to use one of these other more specific terms.
@@ -82,6 +82,7 @@ will likely recursively impact designs):
 - [ ] How's the modularity? Is there semantic decoupling or only syntactic?
 - [ ] How's the conceptual cohesion?
 - [ ] How's the debuggability?
+- [ ] How's the testability?
 - [ ] How's the implementation cost (particularly for setting up the infrastructure)?
     - [ ] If relevant, how's the DevFinOps?
 - [ ] Are there any events that would be beneficial to push?

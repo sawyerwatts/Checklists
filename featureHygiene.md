@@ -36,6 +36,7 @@ effects to services/infra, etc
     - [ ] How's the modularity? Is there semantic decoupling or only syntactic?
     - [ ] How's the conceptual cohesion?
     - [ ] How's the debuggability?
+    - [ ] How's the testability?
 - [ ] Review outbound network connections
     - [ ] Ensure connections are pooled appropriately (to ensure quicker requests and to avoid port
     exhaustion)

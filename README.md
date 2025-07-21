@@ -15,9 +15,9 @@ and occassionally writes CLI tools. This is the perspective these checklists are
 Several docs call this out as well, but this is not strictly a top-down, waterfall list, anything
 can feed back into "previous" steps, especially design and implementation.
 
-- [ ] What is the context for this work?
 - [ ] Remember: ownership of IT, engagement in business needs, and a holistic eye will produce the
 best software.
+- [ ] What is the context for this work and the work's purpose?
 - [ ] If working on pre-existing code, ensure familiarity with the project(s) at hand, including the
 data flow throughout the application and its various states.
 - [ ] Ensure the requirements are known (to an appropriate degree for the task at hand). If in
