@@ -51,7 +51,7 @@ effects to services/infra, etc
 - [ ] How does the implementation fare against [security concerns](./security.md)?
 - [ ] Try to ensure the feature can live for a decade without becoming too legacy.
 - [ ] How do devs easily establish correctness of the code and regression test the code? (Automated
-tests are usually the answer here).
+tests and runnability are usually the answer here).
     - [ ] If you haven't already, this would be a good time to abstract impurities.
     - [ ] Especially test the boundaries between modules, and between impurities.
     - [ ] Also rigorously test with various inputs, possibly with fuzzing.
