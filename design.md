@@ -60,7 +60,8 @@ and complex, pointing out how they have meant single threaded versus braided.
 If possible and relevant, produce and evaluate several designs per prompt, even if some designs are
 actively terrible. Remember, the objective is to solve the problem at hand.
 
-- [ ] What is your first blush design? When in doubt, just make a design.
+- [ ] What is your first blush design? When in doubt, just make a design, especially a data flow
+design.
 - [ ] Consider direct, presumably low-implementation-cost design(s) - these are likely
 addition-heavy designs.
 - [ ] Consider high-conceptual-cohesion design(s) - these are likely change-heavy designs.
@@ -72,26 +73,46 @@ it's unusable.
 ## Design Evaluation and Feedback
 
 Here are some criteria to evaluate the designs, ideally both in isolation and cummulatively (these
-will likely recursively impact designs):
+will likely recursively impact designs). But first, let's set the tone: "I’m not a plumber, but I
+imagine good plumbing is similar: if you’re doing something too exciting, you’re probably going to
+end up with crap all over yourself," Sean Goedecke.
 
-- [ ] Does it handle the happy path and error handling strategy?
+- [ ] Does it handle the happy path and an error handling strategy?
     - [ ] Do partial failures exist, especially in batch jobs? How well are those handled?
 - [ ] How's the focus?
 - [ ] How's the clarity?
 - [ ] How's the cognative load?
-- [ ] How's the modularity? Is there semantic decoupling or only syntactic?
+- [ ] How's the modularity (isolation and reusability)?
+    - [ ] Is there semantic decoupling or only syntactic?
+    - [ ] What kinds of updates would really hurt to implement or change?
+    - [ ] Is it so abstract that it becomes obtuse?
+- [ ] How's the total surface area, esp at different scopes: can anything be merged, removed, or
+encapsulated?
 - [ ] How's the conceptual cohesion?
+- [ ] How's the testability (or otherwise prove correctness)?
 - [ ] How's the debuggability?
-- [ ] How's the testability?
-- [ ] How's the implementation cost (particularly for setting up the infrastructure)?
+- [ ] Where should killswitches (similar to feature flags) be placed? Be sure these can be toggled
+quickly and without a redeploy!
+- [ ] Consider operational maintainability
+    - [ ] How much can state be isolated? Less state means less that needs to be reset upon failure.
+    - [ ] How much idempotency can there be? Where is the point of no return? What if the process is
+    cancelled?
+    - [ ] Is there an appropriate amount of checkpointing?
+    - [ ] Is there an appropriate amount of durability?
+    - [ ] If the process fails (especially at a midway point), how will the process be remediated?
+        - [ ] Are there any shared state resources that need to be reset?
+    - [ ] From incomplete information about inputs and/or outputs, how well can you triangulate that
+    the cause is or is not in this code?
+        - [ ] What are this system's FMS DB queries?
+- [ ] How's the development implementation cost (particularly for setting up the infrastructure)?
+    - [ ] Are there licensing costs?
     - [ ] If relevant, how's the DevFinOps?
+- [ ] Is it possible that some addition/change that will occur frequently and thus will be a
+recurring pattern that should be accounted for and made easy through the design?
 - [ ] Are there any events that would be beneficial to push?
 - [ ] How could the components run out of memory or disk?
-- [ ] How much idempotency can there be? Where is the point of no return?
-- [ ] How much can state be isolated? Less state means less that needs to be reset upon failure
-- [ ] Is there an appropriate amount of checkpointing? Is there an appropriate amount of durability?
-- [ ] Is a cache worth it?
 - [ ] How does the design fare against [scalability and SLA requirements](./scalabilityAndSla.md)?
+    - [ ] Is a cache worth the potentially hurt operational maintainability?
 - [ ] How does the design fare against [security concerns](./security.md)?
 - [ ] Ensure design decisions are documented.
 

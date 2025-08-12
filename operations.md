@@ -22,6 +22,8 @@
 - [ ] What is the cadence for performing a full restore in a fresh environment?
 - [ ] What is the cadence for reviewing the documentation?
 - [ ] Periodically review substantial decisions and preconditions
+- [ ] Periodically review the design types, apps, and systems to ensure it makes sense at various
+layers of abstraction
 
 ## Monitoring/Alering
 
