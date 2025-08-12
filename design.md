@@ -86,6 +86,7 @@ end up with crap all over yourself," Sean Goedecke.
     - [ ] Is there semantic decoupling or only syntactic?
     - [ ] What kinds of updates would really hurt to implement or change?
     - [ ] Is it so abstract that it becomes obtuse?
+    - [ ] How much surface area does a dependency or info have across the system?
 - [ ] How's the total surface area, esp at different scopes: can anything be merged, removed, or
 encapsulated?
 - [ ] How's the conceptual cohesion?
