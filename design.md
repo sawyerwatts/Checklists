@@ -77,6 +77,7 @@ will likely recursively impact designs). But first, let's set the tone: "I’m n
 imagine good plumbing is similar: if you’re doing something too exciting, you’re probably going to
 end up with crap all over yourself," Sean Goedecke.
 
+- [ ] What are the different permutations of the input, output, and internal state?
 - [ ] Does it handle the happy path and an error handling strategy?
     - [ ] Do partial failures exist, especially in batch jobs? How well are those handled?
 - [ ] How's the focus?
