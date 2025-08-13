@@ -44,6 +44,7 @@ effects to services/infra, etc
 - [ ] How could this block for a long time (like if paging isn't implemented)?
 - [ ] How does the performance fare against [scalability and SLA
 requirements](./scalabilityAndSla.md)?
+    - Minimize network calls, then disk calls, then object allocations
 - [ ] How does the implementation fare against [security concerns](./security.md)?
 - [ ] How do devs easily establish correctness of the code and regression test the code? (Automated
 tests and runnability are usually the answer here).
