@@ -60,8 +60,8 @@ and complex, pointing out how they have meant single threaded versus braided.
 If possible and relevant, produce and evaluate several designs per prompt, even if some designs are
 actively terrible. Remember, the objective is to solve the problem at hand.
 
-- [ ] What is your first blush design? When in doubt, just make a design, especially a data flow
-design.
+- [ ] What is your first blush design?
+    - When in doubt, just make a design of data flow and/or required operations.
 - [ ] Consider direct, presumably low-implementation-cost design(s) - these are likely
 addition-heavy designs.
 - [ ] Consider high-conceptual-cohesion design(s) - these are likely change-heavy designs.
@@ -77,7 +77,8 @@ will likely recursively impact designs). But first, let's set the tone: "I’m n
 imagine good plumbing is similar: if you’re doing something too exciting, you’re probably going to
 end up with crap all over yourself," Sean Goedecke.
 
-- [ ] What are the different permutations of the input, output, and internal state?
+- [ ] What are the different permutations / patterns of the input, output, and internal state? Are
+they considered?
 - [ ] Does it handle the happy path and an error handling strategy?
     - [ ] Do partial failures exist, especially in batch jobs? How well are those handled?
 - [ ] How's the focus?
@@ -106,11 +107,13 @@ quickly and without a redeploy!
     - [ ] From incomplete information about inputs and/or outputs, how well can you triangulate that
     the cause is or is not in this code?
         - [ ] What are this system's FMS DB queries?
-- [ ] How's the development implementation cost (particularly for setting up the infrastructure)?
+- [ ] How's the development implementation cost (particularly for setting up the infrastructure and
+permissions and auth)?
     - [ ] Are there licensing costs?
     - [ ] If relevant, how's the DevFinOps?
 - [ ] Is it possible that some addition/change that will occur frequently and thus will be a
 recurring pattern that should be accounted for and made easy through the design?
+    - Make the common path easy!
 - [ ] Are there any events that would be beneficial to push?
 - [ ] How could the components run out of memory or disk?
 - [ ] How does the design fare against [scalability and SLA requirements](./scalabilityAndSla.md)?

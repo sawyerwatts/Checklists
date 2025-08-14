@@ -23,8 +23,8 @@ and iterative process):
     - [ ] Every line will evaluate to either an expression or throw an exception.
     - [ ] Under what situation will this line throw?
     - [ ] How will the feature behave if a given line throws?
-- [ ] What are the different permutations of the input, output, and internal state? Are they
-considered?
+- [ ] What are the different permutations / patterns of the input, output, and internal state? Are
+they considered?
 - [ ] Have all the output vectors been considered? Return, exception, out/mutated parameters, side
 effects to services/infra, etc
 - [ ] Ensure cancellation is supported
