@@ -119,5 +119,6 @@ recurring pattern that should be accounted for and made easy through the design?
 - [ ] How does the design fare against [scalability and SLA requirements](./scalabilityAndSla.md)?
     - [ ] Is a cache worth the potentially hurt operational maintainability?
 - [ ] How does the design fare against [security concerns](./security.md)?
+- [ ] Consider observability (logging, metrics, tracing)
 - [ ] Ensure design decisions are documented.
 

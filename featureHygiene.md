@@ -39,7 +39,7 @@ effects to services/infra, etc
     - [ ] Ensure connections periodically expire and need to be re-established (to protect against
     DNS changes)
 - [ ] Ensure unmanaged resources are closed and check for other language-specific gotchas
-- [ ] Ensure logging is sufficient
+- [ ] Ensure logging is sufficient for observability (logging, metrics, tracing)
 - [ ] How could this code run out of memory or disk?
 - [ ] How could this block for a long time (like if paging isn't implemented)?
 - [ ] How does the performance fare against [scalability and SLA
