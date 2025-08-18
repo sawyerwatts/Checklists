@@ -24,7 +24,8 @@ done
 [Source](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
 
 ```sh
-#!/bin/bash
+#!/usr/bin/env bash
+
 set -euo pipefail
 IFS=$'\n\t'
 # Note that `set +e` is the syntax to disables variable strictness. This is
@@ -185,5 +186,15 @@ function apply_sql_file()
 }
 export -f apply_sql_file
 find "./$db/" -name "*.sql" -print0 | xargs -0 -I{} bash -c 'apply_sql_file $0 $1' $db {}
+```
+
+## foreach n grep
+
+```shell
+xs=$(some grep)
+for x in $xs
+do
+done
+
 ```
 
