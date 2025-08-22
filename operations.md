@@ -1,5 +1,7 @@
 # Operations
 
+- [ ] Who are the business contacts for the software?
+- [ ] Who are the other technical contacts for the software?
 - [ ] What permissions will this app/operation require?
 - [ ] What are the governance policies, if any?
 - [ ] Is DevFinOps desired and applied?
