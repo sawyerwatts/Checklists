@@ -27,7 +27,8 @@ understand a piece of code (and that code itself).
 
 **Modularity** is cognative load dependency analysis: how well does a piece of code encapsulate and
 abstract away the target cognative load from the rest of the system, and how well it is isolated /
-decoupled from the target cognative load of the rest of the system.
+decoupled from the target cognative load of the rest of the system. In other words, how coupled is
+the code - is it decoupled, loosely coupled, or tightly coupled?
 
 - [ ] Is it obvious what cognative load the module is and is not targeting?
 - [ ] Is the interface small (thus likely simpler for clients and a good encapsulation)?
