@@ -18,6 +18,7 @@ and iterative process):
     DI options in mind as well. FP-style may be be more brittle, but OOP will likely introduce
     shared state problems (and its use of obscured side effect outputs can make it less clear), so
     method DI / pass by reference can be a nice intermediate.
+    - State machines can sometimes be a godsend
 - [ ] Implement error handling
     - [ ] Bulkhead try/catch(es) as appropriate
     - [ ] Every line will evaluate to either an expression or throw an exception.
