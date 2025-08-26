@@ -54,6 +54,7 @@ tests and runnability are usually the answer here).
     - [ ] Also rigorously test with various inputs, possibly with fuzzing.
 - [ ] Monitoring: how do you ensure this feature keeps working? See [operations.md](./operations.md)
 for more.
+    - [ ] Related to timeouts, how long is a yellow warning?
 - [ ] Ensure design decisions are documented.
 - [ ] Ensure inlined docs, wiki, and README are up to date
     - [ ] Is there anything that would be important for a new dev to know?

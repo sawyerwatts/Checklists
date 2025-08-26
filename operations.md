@@ -29,6 +29,7 @@ layers of abstraction
 
 ## Monitoring/Alering
 
+- [ ] Related to timeouts, how long is a yellow warning?
 - [ ] Are log levels warning/error/critical relayed to a ticketing system?
 - [ ] How many/rate failures/errors is too many over what period?
 - [ ] How many/rate successful requests/outputs/sideEffects?
