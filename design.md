@@ -112,8 +112,9 @@ quickly and without a redeploy!
 permissions and auth)?
     - [ ] Are there licensing costs?
     - [ ] If relevant, how's the DevFinOps?
-- [ ] Is it possible that some addition/change that will occur frequently and thus will be a
-recurring pattern that should be accounted for and made easy through the design?
+- [ ] Could you see yourself performing a change like this again? Is it possible that some
+addition/change that will occur frequently and thus will be a recurring pattern that should be
+accounted for and made easy through the design?
     - Make the common path easy!
 - [ ] Are there any events that would be beneficial to push?
 - [ ] How could the components run out of memory or disk?
