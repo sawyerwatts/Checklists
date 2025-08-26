@@ -29,4 +29,6 @@ doubt, [Here](./requirements.md) are some very basic questions.
 - [ ] If a new application is necessary, ensure [application hygiene](./appHygiene.md).
 - [ ] If a new feature is being implemented, ensure [feature hygiene](./featureHygiene.md).
 - [ ] Take a pass at [operations](./operations.md) as relevant
+- [ ] Does the result meet the need?
+- [ ] How usable is the result?
 

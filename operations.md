@@ -1,7 +1,9 @@
 # Operations
 
-- [ ] Who are the business contacts for the software?
-- [ ] Who are the other technical contacts for the software?
+TODO: reorganize this file
+
+- [ ] Who are the long-term business contacts for the software?
+- [ ] Who are the long-term technical contacts for the software?
 - [ ] What permissions will this app/operation require?
 - [ ] What are the governance policies, if any?
 - [ ] Is DevFinOps desired and applied?
@@ -29,6 +31,7 @@ layers of abstraction
 
 ## Monitoring/Alering
 
+- [ ] How are the logs, metrics, and tracing?
 - [ ] Related to timeouts, how long is a yellow warning?
 - [ ] Are log levels warning/error/critical relayed to a ticketing system?
 - [ ] How many/rate failures/errors is too many over what period?
