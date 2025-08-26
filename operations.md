@@ -15,6 +15,8 @@ TODO: reorganize this file
 - [ ] Are all persistent media (like logs) archived?
 - [ ] When are archives moved to cold storage?
 - [ ] Are there backups? 3-2-1?
+- [ ] How frequently are backups taken?
+- [ ] Are backups tested?
 
 ## Recurring Tasks
 
