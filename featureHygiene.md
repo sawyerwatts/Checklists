@@ -6,6 +6,8 @@ and iterative process):
 
 - [ ] What is the context and goal for this feature?
 - [ ] Define the broad error handling strategy
+    - [ ] When in doubt, choose the option that makes it easy to operate/remediate (like just
+    rerunning)
     - [ ] Do partial failures exist?
     - [ ] Do we care to destinguish errors between repeatable business errors, repeatable IT errors,
     and/or one-off/transient (IT) errors (AKA network issues)?
@@ -20,7 +22,6 @@ and iterative process):
     method DI / pass by reference can be a nice intermediate.
     - State machines can sometimes be a godsend
 - [ ] Implement error handling
-    - [ ] When in doubt, choose the option that makes it easy operationally (like just rerunning)
     - [ ] Bulkhead try/catch(es) as appropriate
     - [ ] Every line will evaluate to either an expression or throw an exception.
     - [ ] Under what situation will this line throw?
