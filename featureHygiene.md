@@ -22,6 +22,7 @@ and iterative process):
     method DI / pass by reference can be a nice intermediate.
     - State machines can sometimes be a godsend
 - [ ] Implement error handling
+    - [ ] Revisit initial error strategy and ensure it still makes sense
     - [ ] Bulkhead try/catch(es) as appropriate
     - [ ] Every line will evaluate to either an expression or throw an exception.
     - [ ] Under what situation will this line throw?
