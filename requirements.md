@@ -7,6 +7,7 @@ Credit to
 
 - [ ] Who are the business contacts for the implementation?
 - [ ] Who are the IT contacts for the implementation?
+- [ ] What is the deadline of the work?
 - [ ] Who is the software for? Whose opinions matter?
 - [ ] Very, very broadly, what should the software do? Word processor, spreadsheet, etc.
 - [ ] How should the software work? CLI tool, web service, etc

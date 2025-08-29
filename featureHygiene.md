@@ -6,8 +6,8 @@ and iterative process):
 
 - [ ] What is the context and goal for this feature?
 - [ ] Define the broad error handling strategy
-    - [ ] When in doubt, choose the option that makes it easy to operate/remediate (like just
-    rerunning)
+    - [ ] When in doubt, make it as idempotent as possible, push the point of no return as late as
+    possible, and choose the option that makes it easy to operate/remediate (like just rerunning)
     - [ ] Do partial failures exist?
     - [ ] Do we care to destinguish errors between repeatable business errors, repeatable IT errors,
     and/or one-off/transient (IT) errors (AKA network issues)?
@@ -35,6 +35,7 @@ effects to services/infra, etc
 - [ ] Consider adding assertions and guards, especially around module boundaries
 - [ ] Consider (re-)evaluating the [design](./design.md) of the written code
 - [ ] See the relevant subpage in [./app/](./app/) as appropriate
+- [ ] If you are in a low-refactor environment, see [webAPI.md](./app/webAPI.md) for design tips.
 - [ ] Review outbound network connections
     - [ ] Ensure connections are pooled appropriately (to ensure quicker requests and to avoid port
     exhaustion)
